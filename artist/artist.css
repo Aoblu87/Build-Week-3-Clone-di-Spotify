@@ -1,0 +1,28 @@
+#player i {
+    color: white;
+}
+
+#player {
+    background-color: black;
+}
+
+.progress {
+    margin-bottom: 20px;
+    color: white;
+    height: 2px;
+  }
+
+  .bi-skip-start-fill, .bi-skip-end-fill {
+    font-size: 25px;
+  }
+
+  .progress2 {
+    margin-bottom: 20px;
+    color: white;
+    height: 2px;
+    width: 150px;
+  }
+
+  .progress-bar {
+    color: white;
+  }
