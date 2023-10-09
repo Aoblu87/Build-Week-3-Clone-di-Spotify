@@ -50,7 +50,7 @@ function displayResults(result) {
     resultsContainer.innerHTML = songs.map( result => /*html*/`
     <div class="col">
     <div class="card">
-        <img src="${result.artist}" class="card-img-top" alt="${result.album}">
+        <img src="${result.album.cover_xl}" class="card-img-top" alt="${result.artist.title}">
         <div class="card-body">
           <p class="card-text">${result.duration}</p>
         </div>
