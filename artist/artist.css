@@ -9,7 +9,8 @@
 .progress {
     margin-bottom: 20px;
     color: white;
-    height: 2px;
+    height: 3px;
+    
   }
 
   .bi-skip-start-fill, .bi-skip-end-fill {
@@ -17,12 +18,19 @@
   }
 
   .progress2 {
-    margin-bottom: 20px;
+    
     color: white;
-    height: 2px;
-    width: 150px;
+    height: 4px;
+    width: 100px;
   }
 
-  .progress-bar {
+  .bi-volume-down {
+    font-size: 25px;
+  }
+
+  .time {
     color: white;
+    padding: 0px;
+    width: 33px;
+    margin-bottom: 22px;
   }
