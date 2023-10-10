@@ -15,23 +15,25 @@
 
 
     <div class="bg-black" id="fixed-sidebar-sx">
-        <div class="sticky-top p-3">
+        <div class="sticky-top ps-3 py-2 pe-3">
             <div class="nav flex-column">
-                <a href="#_" class="text-decoration-none text-light py-2 d-flex align-items-center"><i
-                        class="bi bi-house-door fs-4 text me-2"></i> <span>Home</span></a>
-                <a href="#_" class="text-decoration-none text-light py-2 d-flex align-items-center"><i
-                        class="bi bi-search fs-4 text me-2"></i> <span>Cerca</span></a>
-                <a href="#_" class="text-decoration-none text-light pt-2 pb-3 d-flex align-items-center"><i
-                        class="bi bi-upc fs-4 text me-2"></i> <span>La tua Libreria</span></a>
-                <a href="#_" class="text-decoration-none text-light d-flex pt-3 pb-2 d-flex align-items-center">
+                <p class="text-light pb-2 fw-bolder m-0 fs-3 text"> ...</p>
+                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
+                        class="bi bi-house-door-fill fs-5 text me-2"></i> <span class="fw-bolder">Home</span></a>
+                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
+                        class="bi bi-search fs-5 text me-2"></i> <span class="fw-bolder">Cerca</span></a>
+                <a href="#_" class="text-decoration-none text-grey pt-2 pb-3 d-flex align-items-center"><i
+                        class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua Libreria</span></a>
+                <a href="#_" class="text-decoration-none text-grey d-flex pt-3 pb-2 d-flex align-items-center">
                     <div class="me-3 bg-body-tertiary img-playlist-sidebar"><i class="bi bi-plus-lg text-dark"></i>
-                    </div><span>Crea PLaylist</span>
+                    </div><span class="fw-bolder">Crea PLaylist</span>
                 </a>
-                <a href="#_" class="text-decoration-none text-light py-2 d-flex align-items-center"><img
-                        src="../assets/branichetipiacciono.png" alt="" class="me-3"><span>Brani che ti
+                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><img
+                        src="../assets/branichetipiacciono.png" alt="" class="me-3"><span class="fw-bolder">Brani che ti
                         piacciono</span></a>
-                <a href="#_" class="text-decoration-none text-light d-flex align-items-center py-2">
-                    <div class="me-3 img-episodi-sidebar"><i class="bi bi-bookmark-fill"></i></div><span>I tuoi
+                <a href="#_" class="text-decoration-none text-grey d-flex align-items-center py-2">
+                    <div class="me-3 img-episodi-sidebar"><i class="bi bi-bookmark-fill"></i></div><span
+                        class="fw-bolder">I tuoi
                         Episodi</span>
                 </a>
             </div>
@@ -143,13 +145,42 @@
 
     </div>
     <div class="col-2 bg-black" id="sticky-sidebar-dx">
-        <div class="sticky-top">
-            <div class="nav flex-column">
-                <a href="#_" class="nav-link">Link</a>
-                <a href="#_" class="nav-link">Link</a>
-                <a href="#_" class="nav-link">Link</a>
-                <a href="#_" class="nav-link">Link</a>
-                <a href="#_" class="nav-link">Link</a>
+        <div class="sticky-top ps-3 py-2 pe-3">
+            <div class="nav flex-column pt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <span class="m-0 fw-bolder text-light">Attività amici</span>
+                    </div>
+                    <div><i class="bi bi-person-add me-2 text-grey fs-5 text"></i><i
+                            class="bi bi-x-lg text-grey fs-5 text"></i></div>
+                </div>
+                <div class="friends mt-3">
+                    <div><img src="../assets/userphoto1.jpeg" alt=""></div>
+                    <div class="me-5">
+                        <p class="fw-bolder m-0 text-grey">Charlie Hoockman</p>
+                        <p class="m-0 text-grey">In Camera • Yumi Zouma</p>
+                        <div class="d-flex align-items-center"><i class="bi bi-vinyl text-grey me-2 fs-6 text"></i><p class="m-0 text-grey"> EP III</p></div>
+                    </div>
+                    <div><p class="m-0 text-grey">4 ore</p></div>
+                </div>
+                <div class="friends mt-3">
+                    <div><img src="../assets/userphoto2.jpeg" alt=""></div>
+                    <div class="me-5">
+                        <p class="fw-bolder m-0 text-grey">lightdark02</p>
+                        <p class="m-0 text-grey">Aimed to kill • Jade LeMac</p>
+                        <div class="d-flex align-items-center"><i class="bi bi-vinyl text-grey me-2 fs-6 text"></i><p class="m-0 text-grey">Aimed to Kill</p></div>
+                    </div>
+                    <div><p class="m-0 text-grey">8 ore</p></div>
+                </div>
+                <div class="friends mt-3">
+                    <div><img src="../assets/userphoto3.jpg" alt=""></div>
+                    <div class="me-5">
+                        <p class="fw-bolder m-0 text-grey">valeria Traverso</p>
+                        <p class="m-0 text-grey">New Kings • Sleeping Wolf</p>
+                        <div class="d-flex align-items-center"><i class="bi bi-music-note-beamed text-grey me-2 fs-6 text"></i><p class="m-0 text-grey">Twint Badass Mood</p></div>
+                    </div>
+                    <div><p class="m-0 text-grey">3 ore</p></div>
+                </div>
             </div>
         </div>
     </div>
@@ -183,6 +214,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+        <script src="album.js"></script>
 </body>
 
 </html>
