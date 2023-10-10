@@ -8,6 +8,10 @@
    opacity: 1;
 }
 
+.bi-play-circle-fill:hover {
+    transform: scale(105%);
+}
+
 #player {
     background-color: black;
 }
@@ -155,3 +159,82 @@ background:grey;
 .friends p {
   font-size: 13px;
 }
+
+#main {
+  background-color: #1F1F1F;
+}
+
+
+/* LOADER */
+.jelly {
+	--uib-size: 100px;
+	--uib-speed: .9s;
+	--uib-color: rgb(0, 0, 0);
+	display: grid;
+    place-items: center;
+  
+	position: relative;
+	height: calc(var(--uib-size) / 2);
+	width: var(--uib-size);
+	filter: url('#uib-jelly-ooze');
+	animation: rotate calc(var(--uib-speed) * 2) linear infinite;
+  }
+  
+  .jelly::before,
+  .jelly::after {
+	content: '';
+	position: absolute;
+	top: 0%;
+	left: 25%;
+	width: 50%;
+	height: 100%;
+	background: var(--uib-color);
+	border-radius: 100%;
+  }
+  
+  .jelly::before {
+	animation: shift-left var(--uib-speed) ease infinite;
+  }
+  
+  .jelly::after {
+	animation: shift-right var(--uib-speed) ease infinite;
+  }
+  
+  .jelly-maker {
+	width: 0;
+	height: 0;
+	position: absolute;
+  }
+  
+  @keyframes rotate {
+	0%,
+	49.999%,
+	100% {
+	  transform: none;
+	}
+  
+	50%,
+	99.999% {
+	  transform: rotate(90deg);
+	}
+  }
+  
+  @keyframes shift-left {
+	0%,
+	100% {
+	  transform: translateX(0%);
+	}
+	50% {
+	  transform: scale(0.65) translateX(-75%);
+	}
+  }
+  
+  @keyframes shift-right {
+	0%,
+	100% {
+	  transform: translateX(0%);
+	}
+	50% {
+	  transform: scale(0.65) translateX(75%);
+	}
+  }
