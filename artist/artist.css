@@ -65,6 +65,24 @@
   }
 }
 
+.sfondo-img {
+    width: 83%;
+    height: 300px;
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.artist-name {
+  z-index: 2;
+  font-size: 100px;
+  position: relative;
+  top: 100px;
+  margin-left: 20px;
+  opacity: 1;
+}
+
+/*SIDEBAR*/
 #fixed-sidebar-sx {
   flex: 0 0 auto;
   width: 17%;

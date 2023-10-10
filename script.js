@@ -61,7 +61,7 @@ function displayResults(result) {
     <div id="card" class="card p-3">
         <img src="${result.album.cover_xl}" class="card-img-top rounded-circle" alt="${result.title}">
         <div class="card-body p-0 mt-2">
-        <p class="card-text fw-semibold text-white">${result.artist.name}</p>
+        <a href="artist/artist.html?id=${result.artist.id}" class="ms-5"><p class="card-text fw-semibold text-white">${result.artist.name}</p></a>
         <p class="card-text fw-normal text-white-50">Artist</p>
         </div>
       </div>

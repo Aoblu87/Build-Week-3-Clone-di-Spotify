@@ -2,6 +2,7 @@ let cont = document.querySelector("#main");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
 
@@ -39,24 +40,31 @@ async function loadData(id) {
  </svg>`
 
 
-  function displayProduct (data) {
+  function displayArtist (data) {
     
     
           cont.innerHTML = /*html*/` 
-                        <div class="sfondo-img">
-                              ${data.picture_xl}
+                        <div >
+                          <img class="sfondo-img" src="${data.picture_xl}" alt="">  
+                          <p class="text-white-50 artist-name">${data.name}</p>
                         </div>
+                        
   
                         <div>
-  
+                             
                         </div>`;
     }
 
     window.onload = async function () {
       try {
-          const productData = await loadData(id)
-          displayProduct(productData)
+          const artistData = await loadData(id)
+          displayArtist(artistData)
       } catch (error) {
           console.log(error)
       }
   }
+
+
+
+
+  
