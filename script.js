@@ -56,14 +56,6 @@ function displayResults(result) {
     const song = result.data
     console.log(song)
 
-<<<<<<< Updated upstream
-    resultsContainer.innerHTML = songs.map( result => /*html*/`
-    <div class="col">
-    <div class="card">
-        <img src="${result.album.cover_xl}" class="card-img-top" alt="${result.artist.title}">
-        <div class="card-body">
-          <p class="card-text">${result.duration}</p>
-=======
     resultsContainer.innerHTML = song.map( result => /*html*/`
     <div id="card-container" class="col-md-2">
     <div id="card" class="card p-3">
@@ -71,7 +63,6 @@ function displayResults(result) {
         <div class="card-body p-0 mt-2">
         <p class="card-text fw-semibold text-white">${result.artist.name}</p>
         <p class="card-text fw-normal text-white-50">Artist</p>
->>>>>>> Stashed changes
         </div>
       </div>
 </div>
