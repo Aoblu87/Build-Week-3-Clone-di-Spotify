@@ -1,18 +1,19 @@
 #fixed-sidebar-sx {
     flex: 0 0 auto;
-    width: 17%;
+    width: 20%;
     padding-right: 0;
-    height: 100vh;
+    position: fixed;
+    overflow: scroll;
+    height: 100%;
 }
+
 .bg-black {
     background-color: black;
 }
 .text-grey {
     color: lightgray;
 }
-.text-grey:hover {
-    color: white;
-}
+
 .img-playlist-sidebar {
     width: 1.8rem;
     height: 1.8rem;
@@ -23,7 +24,7 @@
     border-radius: 4px;
     
 }
-#fixed-sidebar-sx .nav.flex-column img {
+#fixed-sidebar-sx .sidebar-top .nav.flex-column img {
     width: 1.8rem;
     height: 1.8rem;
     border-radius: 4px;
@@ -45,10 +46,7 @@
 }
 
 .sidebar-scroll {
-    
-    position: fixed;
     height: 100vh;
-    width: 17%;
     overflow: auto;
 }
 
@@ -62,10 +60,14 @@ html::-webkit-scrollbar-track {
 .sidebar-scroll::-webkit-scrollbar{
     width:10px;
     
+    
 }
 html::-webkit-scrollbar{
     width:10px;
     
+}
+#fixed-sidebar-sx::-webkit-scrollbar{
+    width: 0;
 }
     
 .sidebar-scroll::-webkit-scrollbar-thumb{
@@ -77,18 +79,12 @@ html::-webkit-scrollbar-thumb{
   background:grey;
 
 }
-
-.friends {
-    display: flex;
-    justify-content:space-between;
-    align-items: flex-start;
-
+.ArtistInfo img {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: fill;
 }
-.friends img {
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-}
-.friends p {
-    font-size: 13px;
+#main {
+    margin-left: 20%;
 }
