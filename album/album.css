@@ -1,0 +1,94 @@
+#fixed-sidebar-sx {
+    flex: 0 0 auto;
+    width: 17%;
+    padding-right: 0;
+    height: 100vh;
+}
+.bg-black {
+    background-color: black;
+}
+.text-grey {
+    color: lightgray;
+}
+.text-grey:hover {
+    color: white;
+}
+.img-playlist-sidebar {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    
+}
+#fixed-sidebar-sx .nav.flex-column img {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 4px;
+}
+
+.img-episodi-sidebar {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #004537;
+    color: #149643;
+}
+#fixed-sidebar-sx .sticky-top {
+    border-bottom: 1px solid grey;
+}
+
+.sidebar-scroll {
+    
+    position: fixed;
+    height: 100vh;
+    width: 17%;
+    overflow: auto;
+}
+
+html::-webkit-scrollbar-track {
+    background: black;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: black;
+}
+
+.sidebar-scroll::-webkit-scrollbar{
+    width:10px;
+    
+}
+html::-webkit-scrollbar{
+    width:10px;
+    
+}
+    
+.sidebar-scroll::-webkit-scrollbar-thumb{
+  background:grey;
+
+}
+
+html::-webkit-scrollbar-thumb{
+  background:grey;
+
+}
+
+.friends {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+
+}
+.friends img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.friends p {
+    font-size: 13px;
+}
