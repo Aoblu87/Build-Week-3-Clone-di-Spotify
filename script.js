@@ -57,7 +57,7 @@ function displayResults(result) {
     console.log(song)
 
     resultsContainer.innerHTML = song.map( result => /*html*/`
-    <div id="card-container" class="col-md-2">
+    <div id="card-container" class="col-md-2 mb-3">
     <div id="card" class="card p-3">
         <img src="${result.album.cover_xl}" class="card-img-top rounded-circle" alt="${result.title}">
         <div class="card-body p-0 mt-2">
