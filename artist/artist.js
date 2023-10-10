@@ -44,7 +44,7 @@ async function loadData(id) {
     
           cont.innerHTML = /*html*/` 
                         <div class="sfondo-img">
-
+                              ${data.picture_xl}
                         </div>
   
                         <div>
