@@ -6,12 +6,12 @@
     background-color: black;
 }
 
-.progress {
+#progress {
     margin-bottom: 20px;
     color: white;
     background-color: gray;
     height: 3px;
-    width: 400px;
+    width: 38vw;
     
   }
 
@@ -19,12 +19,13 @@
     font-size: 25px;
   }
 
-  .progress2 {
+  #progress2 {
     
     color: white;
     background-color: gray;
     height: 4px;
-    width: 100px;
+    width: 7vw;
+    border-radius: 10px;
   }
 
   .bi-volume-down {
@@ -37,3 +38,19 @@
     width: 33px;
     margin-bottom: 22px;
   }
+
+  @media only screen and (max-width: 992px) {
+    #progress {
+      width: 28vw;      
+    }
+
+    #progress2 {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  #progress {
+    width: 12vw;    
+  }
+}
