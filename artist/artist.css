@@ -1,5 +1,11 @@
 #player i {
     color: white;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#player i:hover {
+   opacity: 1;
 }
 
 #player {
