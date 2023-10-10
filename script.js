@@ -53,21 +53,24 @@ async function getResults() {
 function displayResults(result) {
 
 
-    const song = result.data
+    const songs = result.data
+    console.log(songs)
+for (let i = 0; i < 5; i++) {
+    const song = songs[i];
     console.log(song)
-
-    resultsContainer.innerHTML = song.map( result => /*html*/`
+    resultsContainer.innerHTML += /*html*/`
     <div id="card-container" class="col-md-2">
     <div id="card" class="card p-3">
-        <img src="${result.album.cover_xl}" class="card-img-top rounded-circle" alt="${result.title}">
+        <img src="${song.album.cover_xl}" class="card-img-top rounded-circle" alt="${song.title}">
         <div class="card-body p-0 mt-2">
-        <p class="card-text fw-semibold text-white">${result.artist.name}</p>
+        <p class="card-text fw-semibold text-white">${song.album.title}</p>
         <p class="card-text fw-normal text-white-50">Artist</p>
         </div>
       </div>
 </div>
                                 `
-    ).join('')
+    
+}
     
 }
 

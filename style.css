@@ -6,11 +6,13 @@ body{
 
 /* Top del main */
 
-#top-icon{
+#nav-icon{
     height: 3.5rem;
+    background-color: #542636;
 }
 
 #results-container{
+    /* background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212); */
     /* background: linear-gradient(0deg, rgba(18,18,18,1) 37%, rgba(140,219,204,1) 91%); */
     background-color:rgba(18,18,18,1) 37% ;
 }
@@ -20,7 +22,7 @@ main {
 }
 
 #card-container {
-    width: 18%;
+    width: 20%;
 }
 
 #card {
@@ -34,11 +36,26 @@ main {
     background-color: #282828;
 }
 
+/* FOOTER */
+#social-icons button{
+    background-color: #727272;
+    filter: brightness(0.30);
+}
+#social-icons button>.bi{
+    color: white;
+
+}
+#social-icons button:hover{
+    background-color: #727272;
+    filter: brightness(1.50);
+
+}
+
 
 /* SIDEBAR */
 #fixed-sidebar-sx {
     flex: 0 0 auto;
-    width: 21%;
+    width: 25.3%;
     padding-right: 0;
     height: 100vh;
 }
