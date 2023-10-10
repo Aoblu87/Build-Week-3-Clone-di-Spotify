@@ -9,7 +9,9 @@
 .progress {
     margin-bottom: 20px;
     color: white;
+    background-color: gray;
     height: 3px;
+    width: 400px;
     
   }
 
@@ -20,6 +22,7 @@
   .progress2 {
     
     color: white;
+    background-color: gray;
     height: 4px;
     width: 100px;
   }
