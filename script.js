@@ -4,6 +4,15 @@ let resultsContainer = document.querySelector('#results-container')
 // Tutti i risultati
 let allResults = []
 
+function timeStampFromDuration(duration) {
+    const minutes = Math.floor(duration / 60)
+    const seconds = duration % 60
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
+        2,
+        "0"
+    )}`
+}
+
 
 window.onload = async function () {
 
@@ -44,15 +53,25 @@ async function getResults() {
 function displayResults(result) {
 
 
-    const songs = result.data
-    console.log(songs)
+    const song = result.data
+    console.log(song)
 
+<<<<<<< Updated upstream
     resultsContainer.innerHTML = songs.map( result => /*html*/`
     <div class="col">
     <div class="card">
         <img src="${result.album.cover_xl}" class="card-img-top" alt="${result.artist.title}">
         <div class="card-body">
           <p class="card-text">${result.duration}</p>
+=======
+    resultsContainer.innerHTML = song.map( result => /*html*/`
+    <div id="card-container" class="col-md-2">
+    <div id="card" class="card p-3">
+        <img src="${result.album.cover_xl}" class="card-img-top rounded-circle" alt="${result.title}">
+        <div class="card-body p-0 mt-2">
+        <p class="card-text fw-semibold text-white">${result.artist.name}</p>
+        <p class="card-text fw-normal text-white-50">Artist</p>
+>>>>>>> Stashed changes
         </div>
       </div>
 </div>
@@ -65,3 +84,4 @@ function displayResults(result) {
 
 
 
+        //   <p class="card-text">${timeStampFromDuration(result.duration)}</p>

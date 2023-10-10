@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body{
     background-color:black;
 }
@@ -5,4 +6,23 @@ body{
     background: linear-gradient(0deg, rgba(18,18,18,1) 37%, rgba(140,219,204,1) 59%);
 
 
+=======
+main {
+    background-color: #121212;
+}
+
+#card-container {
+    width: 18%;
+}
+
+#card {
+
+    background-color: rgb(21, 20, 20);
+
+
+}
+
+#card:hover{
+    background-color: #282828;
+>>>>>>> Stashed changes
 }
