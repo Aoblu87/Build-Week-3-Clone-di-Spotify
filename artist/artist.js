@@ -101,13 +101,7 @@ async function loadData(id) {
             <img class="album-cover" src="${data[0].album.cover_small}" alt="">
             <span class="song-title">${data.title}</span>
             <span class="song-rank">${data.rank}</span>
-            <span class="song-duration">${data.duration}</span>
-
-                          
-                          
-                          
-   
-                          `;
+            <span class="song-duration">${data.duration}</span> `;
       }
 
     window.onload = async function () {
