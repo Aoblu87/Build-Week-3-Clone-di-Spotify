@@ -1,20 +1,30 @@
 const ArtisInfo = document.querySelector(".ArtistInfo")
 const ArtistSongs = document.querySelector(".Top10Songs")
-
 let number
+let check 
 
 
-
-async function GetSongFromRandomArtist() {
-    randomnumber()
-    const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
-    const result = await response.json()
-    console.log(result.data)
-    return result.data
-    
-    
-    
-}
+ async function GetSongFromRandomArtist() {
+    try {
+        document.querySelector(".waveform").classList.remove("d-none")
+        do {
+        await sleep(1500)
+        randomnumber()
+        const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
+        const result = await response.json()
+        check = result.data 
+        console.log(check)
+        } while ((check.length === 0))
+        return check
+        }
+      catch {
+        ArtisInfo.innerHTML = `"oh oh qualcosa non va`
+      }
+      finally {
+        document.querySelector(".waveform").classList.add("d-none");
+      }
+        
+    } 
 
  window.onload = async function () {
     
@@ -53,5 +63,7 @@ async function GetSongFromRandomArtist() {
   }
 
 function randomnumber() {
-    number = Math.floor(Math.random() * 2000) + 1
+    number = Math.floor(Math.random() * 50000) + 1
 }
+
+const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds))
