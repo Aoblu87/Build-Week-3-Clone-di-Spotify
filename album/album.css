@@ -46,15 +46,14 @@
 .sidebar-scroll {
     position: fixed;
     width: 20%;
-    height: 50vh;
+    height: -webkit-fill-available;
     overflow: auto;
-    bottom: 0vh;
+    top: auto;
 }
 .sidebar-top {
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 20%;
-    height: 40vh;
+    height: auto;
 }
 
 html::-webkit-scrollbar-track {
