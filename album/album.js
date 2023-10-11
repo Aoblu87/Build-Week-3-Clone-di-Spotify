@@ -9,14 +9,7 @@ async function GetSongFromRandomArtist() {
     randomnumber()
     const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
     const result = await response.json()
-    let check = result.data.length 
-    do {
-        randomnumber()
-        const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
-        const result = await response.json()
-         check = result.data.length 
-        console.log(check)
-    } while (check === 0)
+    console.log(result.data)
     return result.data
     
     
@@ -60,5 +53,5 @@ async function GetSongFromRandomArtist() {
   }
 
 function randomnumber() {
-    number = Math.floor(Math.random() * 100) + 1
+    number = Math.floor(Math.random() * 2000) + 1
 }
