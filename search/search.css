@@ -82,4 +82,14 @@ input[type="text"]::placeholder, input[type="text"]{
 .active{
     opacity: 1;
     transform: translateY(0);
+    animation: linear 2s infinite running rotate;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
