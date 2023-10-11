@@ -18,7 +18,7 @@ let check
     try {
         document.querySelector(".waveform").classList.remove("d-none")
         do { //ciclo do while che cicla fino a quando non trova un array pieno
-        await sleep(1500) //funzione che fa fetchare ogni 1.5sec per non intasare il server
+        await sleep(1800) //funzione che fa fetchare ogni 1.5sec per non intasare il server
         randomnumber() // funzione per avere un numero random 
         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
         const result = await response.json()
@@ -73,7 +73,7 @@ let check
   }
 
 function randomnumber() { //funzione per numero random
-    number = Math.floor(Math.random() * 50000) + 1
+    number = Math.floor(Math.random() * 5000) + 1
 }
 
 const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec

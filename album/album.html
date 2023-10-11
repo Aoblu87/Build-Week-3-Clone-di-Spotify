@@ -15,58 +15,95 @@
 
 
     <div class="bg-black" id="fixed-sidebar-sx">
-        <div class="sidebar-top ps-3 py-2 pe-3">
+        <div class="sidebar-top pt-2 mx-2">
             <div class="nav flex-column">
-                <p class="text-light pb-2 fw-bolder m-0 fs-3 text"> ...</p>
-                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
-                        class="bi bi-house-door-fill fs-5 text me-2"></i> <span class="fw-bolder">Home</span></a>
-                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
-                        class="bi bi-search fs-5 text me-2"></i> <span class="fw-bolder">Cerca</span></a>
-                <a href="#_" class="text-decoration-none text-grey pt-2 pb-3 d-flex align-items-center"><i
-                        class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua Libreria</span></a>
-                <a href="#_" class="text-decoration-none text-grey d-flex pt-3 pb-2 d-flex align-items-center">
-                    <div class="me-3 bg-body-tertiary img-playlist-sidebar"><i class="bi bi-plus-lg text-dark"></i>
-                    </div><span class="fw-bolder">Crea PLaylist</span>
-                </a>
-                <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><img
-                        src="../assets/branichetipiacciono.png" alt="" class="me-3"><span class="fw-bolder">Brani che ti
-                        piacciono</span></a>
-                <a href="#_" class="text-decoration-none text-grey d-flex align-items-center py-2">
-                    <div class="me-3 img-episodi-sidebar"><i class="bi bi-bookmark-fill"></i></div><span
-                        class="fw-bolder">I tuoi
-                        Episodi</span>
-                </a>
+                <div class="bg-grey px-3" style="border-radius: 15px;">
+                    <div class="text-decoration-none py-2"><a
+                            class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                                class="bi bi-house-door fs-5 text me-2"></i> <span class="fw-bolder">Home</span></a>
+                    </div>
+                    <div class="text-decoration-none py-2"><a
+                        class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                            class="bi bi-search fs-5 text me-2"></i> <span class="fw-bolder">Cerca</span></a>
+                    </div>
+                    
+                </div>
+                <div class="bg-grey px-3" style="border-top: 5px solid black;
+                border-radius: 15px 15px 0 0;">
+                    <div class="d-flex justify-content-between align-items-center">
+                
+                        <div class="text-decoration-none py-2"><a
+                            class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                                class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua
+                                    Libreria</span></a>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-lg text-light fs-5"></i>
+                            <i class="bi bi-arrow-right-short text-light fs-4"></i>
+                        </div>
+
+                    </div>
+                    <div class="d-flex mt-3 pb-2 justify-content-evenly" style="font-size: 0.8rem;">
+                        <div class=" sidebar-button d-flex justify-content-center align-items-center">
+                            <a href="#_" class="text-decoration-none fw-medium text-light ">
+                                Playlist
+                            </a>
+                        </div>
+                        <div class="sidebar-button d-flex justify-content-center align-items-center">
+                            <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                Podcast e show
+                            </a>
+                        </div>
+                        <div class="sidebar-button d-flex justify-content-center align-items-center">
+                            <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                Album
+                            </a>
+                        </div>
+                        <div class="sidebar-button d-flex justify-content-center align-items-center">
+                            <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                Artisti
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="sidebar-scroll p-3 bg-grey ms-1">
-            <div class="nav flex-column">
+        <div class="sidebar-scroll mx-2 bg-grey">
+            <div class="nav flex-column p-3 ">
                 <div class="waveform d-none">
                     <div class="waveform__bar"></div>
                     <div class="waveform__bar"></div>
                     <div class="waveform__bar"></div>
                     <div class="waveform__bar"></div>
-                  </div>
+                </div>
                 <div class="ArtistInfo text-grey">
-                    
+
                 </div>
                 <div class="Top10Songs">
-                    
+
                 </div>
 
             </div>
-            
+
         </div>
     </div>
-    <div class="col" id="main">
-        
+    <div class="col bg-black" id="main">
+        <div>
+            
+        </div>
+
     </div>
-    
-   
+
+
 
     <section id="player" class="fixed-bottom">
         <div class="conteiner-fluid">
             <div class="row">
-    
+
                 <div class="song col-2">
                     <div class="img-album">
 
@@ -77,7 +114,7 @@
                     </div>
                     <i class="bi bi-heart"></i>
                 </div>
-    
+
                 <div class="player col-7">
                     <div class="player-icons d-flex justify-content-center align-items-center">
                         <i class="bi bi-shuffle mx-2"></i>
@@ -90,8 +127,9 @@
                     <div class="row justify-content-center playBar pt-1 d-flex align-items-center">
                         <p class="time col-1">2:15</p>
                         <div class="col-lg-8 col-md-6 col-sm-3">
-                            <div >                                
-                                <div id="progress" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div>
+                                <div id="progress" class="progress" role="progressbar" aria-label="Basic example"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar w-75 bg-light"></div>
                                 </div>
                             </div>
@@ -99,22 +137,23 @@
                         <p class="time col-1">3:40</p>
                     </div>
                 </div>
-    
+
                 <div class="icons col-3 d-flex justify-content-center align-items-center">
                     <i class="bi bi-file-play mx-1"></i>
                     <i class="bi bi-mic mx-1"></i>
                     <i class="bi bi-border-width mx-1"></i>
                     <i class="bi bi-pc-display mx-1"></i>
                     <i class="bi bi-volume-down mx-1"></i>
-                   
-                            <div >
-                                <div id="progress2" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                    <div class="progress-bar w-75 bg-light"></div>
-                                  </div>
-                            </div>
-                        
+
+                    <div>
+                        <div id="progress2" class="progress" role="progressbar" aria-label="Basic example"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar w-75 bg-light"></div>
+                        </div>
+                    </div>
+
                     <i class="bi bi-pip mx-1"></i>
-    
+
                 </div>
             </div>
         </div>
@@ -144,10 +183,10 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="album.js"></script>
+    <script src="album.js"></script> 
 </body>
 
 </html>
