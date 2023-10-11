@@ -43,11 +43,30 @@ main {
 }  */
 
 
+/* GREETINGS Section */
+
+#greetings{
+    width: 100%;
+}
+
+
+#greetings >div{
+    height: 5.5rem;
+    width: 31.5rem;
+    background-color: rgba(42, 43, 43, 0.4);
+}
+#greetings >div > .row{
+    height: 5.5rem;
+}
+#img-greetings{
+    height: 5.5rem;
+}
+
 
 /* CARDS */
 
-#results-container>div {
-    width: 20%;
+.results-container>div {
+    width: 14%;
 }
 
 #play-btn-container {
@@ -64,7 +83,9 @@ main {
 
     background-color: rgb(21, 20, 20);
 }
-
+.card-results{
+    height: 18rem;
+}
 
 
 #card:hover {
@@ -94,12 +115,19 @@ main {
     filter: brightness(1.50);
 
 }
+ #footer-list >li{
+    font-size: 10pt;
+ }
+ #copyrights p{
+    font-size: 10pt;
+ }
+
 
 
 /* SIDEBAR */
 #fixed-sidebar-sx {
     flex: 0 0 auto;
-    width: 25.3%;
+    width: 22%;
     padding-right: 0;
     height: 100vh;
 }
