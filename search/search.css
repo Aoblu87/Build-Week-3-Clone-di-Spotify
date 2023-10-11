@@ -22,6 +22,10 @@ body::before{
     z-index: 5;
 }
 
+.bg-dark{
+    background-color: var(--color-grey) !important;
+}
+
 input[type="text"]:focus{
     outline: none !important;
 }
@@ -92,4 +96,10 @@ input[type="text"]::placeholder, input[type="text"]{
     100%{
         transform: rotate(360deg);
     }
+}
+
+.square {
+    height: 100px;
+    background-position: center;
+    background-size: cover;
 }

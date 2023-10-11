@@ -1,5 +1,6 @@
 const SearchInput = document.querySelector('#SearchBar')
 const player = document.querySelector('#player')
+const row = document.querySelector('.container.main')
 
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
@@ -20,17 +21,12 @@ async function getData(query) {
 
 async function displayResults(results) {
 
-    const row = document.querySelector('.container.main')
-
     if (results.length <= 3) {
-        row.innerHTML = ''
+        displayHome();
 
     } else {
 
         const data = await getData(results)
-
-        console.log(data);
-
         row.innerHTML = data.map(({ album, artist, title, duration, preview, id }) => /*html*/`
     
         <div class="row mb-4" id="_${id}" onclick="playAudio(${id})">
@@ -54,6 +50,12 @@ async function displayResults(results) {
     }
 }
 
+async function displayHome(){
+    row.innerHTML = `
+
+    `
+}
+
 async function playAudio(id) {
     const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + id)
     const data = await response.json()
@@ -71,33 +73,15 @@ async function playAudio(id) {
 
         CurrentAudio.play();
 
-        player.style.transform = "translateY(0px)"
-        player.innerHTML = `
-        <div class="row mb-4 mx-0 mx-md-5 p-2 bg-dark rounded d-flex align-items-center">
-            <div class="col-auto px-0">
-                <div style="position: relative">
-                    <img src="${album.cover_big}" alt="" class="img-fluid rounded shadow" style="width: 4rem">
-                </div>
-            </div>
-            <div class="col d-flex flex-column justify-content-center TextCut">
-                <h5 class="mb-1 fs-6 fw-semibold TextCut">${title}</h5>
-                <p class="mb-0 text-white-50 TextCut">${artist.name}</p>
-            </div>
-            <div class="col-auto d-flex align-items-center">
-                <i class="bi bi-heart mx-3"></i>
-                <i class="bi bi-play-fill"></i>
-
-            </div>
-        </div>
-        `
+        player.querySelector('img').src = album.cover_big
+        player.querySelector('h5').innerHTML = title
+        player.querySelector('p').innerHTML = artist.name
 
         icon.innerHTML = '<i class="bi bi-pause-fill text-white"></i>'
         icon.classList.toggle("active")
         songName.style.color = "var(--color-green)"
 
         CurrentAudio.addEventListener('ended', function () {
-            player.style.transform = "translateY(150px)"
-
             icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
             icon.classList.remove("active")
             songName.style.color = "#fff"
@@ -105,8 +89,6 @@ async function playAudio(id) {
 
     } else { /* SE L'AUDIO E' IN RIPRODUZIONE */
         CurrentAudio.pause();
-
-        player.style.transform = "translateY(150px)"
 
         icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>'
         icon.classList.toggle("active")
