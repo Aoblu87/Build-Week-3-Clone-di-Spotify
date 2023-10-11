@@ -5,8 +5,8 @@
     
 }
 
-.bg-black {
-    background-color: black;
+.bg-grey {
+  background-color: #121212 !important;
 }
 .text-grey {
     color: lightgray;
@@ -92,3 +92,69 @@ html::-webkit-scrollbar-thumb{
     object-fit: fill;
 }
 
+#player i {
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#player i:hover {
+   opacity: 1;
+}
+
+.bi-play-circle-fill:hover {
+    transform: scale(105%);
+}
+
+#player {
+    background-color: black;
+}
+
+#progress {
+    margin-bottom: 20px;
+    color: white;
+    background-color: gray;
+    height: 3px;
+    width: 38vw;
+    
+  }
+
+  .bi-skip-start-fill, .bi-skip-end-fill {
+    font-size: 25px;
+  }
+
+  #progress2 {
+    
+    color: white;
+    background-color: gray;
+    height: 4px;
+    width: 7vw;
+    border-radius: 10px;
+  }
+
+  .bi-volume-down {
+    font-size: 25px;
+  }
+
+  .time {
+    color: white;
+    padding: 0px;
+    width: 33px;
+    margin-bottom: 22px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    #progress {
+      width: 28vw;      
+    }
+
+    #progress2 {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  #progress {
+    width: 12vw;    
+  }
+}
