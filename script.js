@@ -36,7 +36,7 @@ window.onload = async function () {
 async function getResults() {
 
     try {
-        const response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=pianoguys')
+        const response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica')
 
         const jsonData = await response.json()
         return jsonData
