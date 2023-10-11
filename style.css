@@ -9,25 +9,29 @@ main {
     background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212);
 
 }
+
 /* Top del main */
 
 #top-icon {
     height: 4rem;
     background-color: #542636;
-    
+
 }
+
 /* #top-icon .bi{
     background-color: #071113;
     border-radius: 50px;
 } */
-#nav-icon button{
+#nav-icon button {
     width: 2.5rem;
 }
-#user-icon button:nth-child(2){
+
+#user-icon button:nth-child(2) {
     width: 2rem;
 
 }
-#user-icon button:nth-child(3){
+
+#user-icon button:nth-child(3) {
     width: 2rem;
 }
 
@@ -42,12 +46,14 @@ main {
 
 /* CARDS */
 
-#card-container {
+#results-container>div {
     width: 20%;
 }
-#play-btn-container{
+
+#play-btn-container {
     inset: 108px 0 0 110px;
 }
+
 #play-btn-container button {
     background-color: #1CB954;
     -webkit-box-shadow: 0px 12px 14px -5px #000000;
@@ -66,9 +72,9 @@ main {
     cursor: pointer;
 }
 
-#card:hover #play-btn{
-visibility: visible;
-transition: all 0.75 ease-in-out;
+#card:hover #play-btn {
+    visibility: visible;
+    transition: all 0.75 ease-in-out;
 }
 
 
