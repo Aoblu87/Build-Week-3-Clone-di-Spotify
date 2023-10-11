@@ -143,33 +143,38 @@
         </div>
       </div>
       <!-- MAIN -->
-      <main class="col d-flex flex-column my-2">
+      <main class="col d-flex flex-column my-2 p-0">
 
 
-        <div id="nav-icon" class="row p-2 sticky-top">
-          <div class="col">
+        <div id="top-icon" class="row p-2 sticky-top m-0">
+          <div id="nav-icon" class="col d-flex align-items-center ">
 
-            <a class="col-md-1 link-offset-2 link-underline link-underline-opacity-0 text-white" href="#"><i
-                class="bi bi-arrow-left-circle"></i></a>
-            <a class="col-md-1 link-offset-2 link-underline link-underline-opacity-0 text-white" href="#"><i
-                class="bi bi-arrow-right-circle"></i></a>
+            <button disabled class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+              <i class="bi bi-arrow-left"></i></i></button>
+            <button disabled class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+              <i class="bi bi-arrow-right"></i></button>
           </div>
-          <div id="user-icon" class="col">
 
-            <!-- <a class="col-md-1 link-offset-2 link-underline link-underline-opacity-0 text-white" href="#"><i
-                class="bi bi-arrow-left-circle"></i></a>
-                <a class="col-md-1 link-offset-2 link-underline link-underline-opacity-0 text-white" href="#"><i
-                  class="bi bi-arrow-right-circle"></i></a> -->
+          <div id="user-icon" class="col d-flex align-items-center justify-content-end">
+            <button  class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-pill w-25 h-75 m-0 p-0 me-2">
+              <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
+            <button  class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+              <i class="bi bi-bell"></i></button>
+              <button  class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+                <i class="bi bi-person"></i></i></button>
           </div>
 
 
 
 
         </div>
-        <div class="row mx-2">
+        <div class="row mx-2 mb-5">
           <div id="greetings" class="col">
+            <a href=""
+              class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+              <h4 class="text-white my-3">Made for you</h4>
 
-            <h4 class="text-white">Made for you</h4>
+            </a>
             <div id="results-container" class="row">
 
             </div>
@@ -187,11 +192,11 @@
         </div>
 
         <!-- FOOTER -->
-        <footer class="py-5">
+        <footer class="row py-5 mx-3">
           <div class="row">
             <div class="col-6 col-md-2 mb-3">
-              <h6 class="text-white" >Company</h6>
-              <ul class="nav flex-column">
+              <h6 class="text-white">Company</h6>
+              <ul class="nav flex-column fs-6">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">About</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Jobs</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">For the Record</a></li>
@@ -199,8 +204,8 @@
             </div>
 
             <div class="col-6 col-md-2 mb-3">
-              <h6 class="text-white" >Communities</h6>
-              <ul class="nav flex-column">
+              <h6 class="text-white">Communities</h6>
+              <ul class="nav flex-column fs-6">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">For Artists</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Developers</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Advertising</a></li>
@@ -210,8 +215,8 @@
             </div>
 
             <div class="col-6 col-md-2 mb-3">
-              <h6 class="text-white" >Useful links</h6>
-              <ul class="nav flex-column">
+              <h6 class="text-white">Useful links</h6>
+              <ul class="nav flex-column fs-6">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Support</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Free Mobile App</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white-50">Consumer Rights</a></li>

@@ -1,51 +1,89 @@
-body{
-    background-color:black;
+body {
+    background-color: black;
 }
 
 /* MAIN */
 
+main {
+
+    background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212);
+
+}
 /* Top del main */
 
-#nav-icon{
-    height: 3.5rem;
+#top-icon {
+    height: 4rem;
     background-color: #542636;
+    
+}
+/* #top-icon .bi{
+    background-color: #071113;
+    border-radius: 50px;
+} */
+#nav-icon button{
+    width: 2.5rem;
+}
+#user-icon button:nth-child(2){
+    width: 2rem;
+
+}
+#user-icon button:nth-child(3){
+    width: 2rem;
 }
 
-#results-container{
-    /* background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212); */
-    /* background: linear-gradient(0deg, rgba(18,18,18,1) 37%, rgba(140,219,204,1) 91%); */
-    background-color:rgba(18,18,18,1) 37% ;
-}
+/* 
+ #results-container{
+    background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212); 
+    background: linear-gradient(0deg, rgba(18,18,18,1) 37%, rgba(140,219,204,1) 91%);
+     background-color:rgba(18,18,18,1) 37% ;
+}  */
 
-main {
-    background-color: #121212;
-}
+
+
+/* CARDS */
 
 #card-container {
     width: 20%;
+}
+#play-btn-container{
+    inset: 108px 0 0 110px;
+}
+#play-btn-container button {
+    background-color: #1CB954;
+    -webkit-box-shadow: 0px 12px 14px -5px #000000;
+    box-shadow: 0px 12px 14px -5px #000000;
 }
 
 #card {
 
     background-color: rgb(21, 20, 20);
-
-
 }
 
-#card:hover{
+
+
+#card:hover {
     background-color: #282828;
+    cursor: pointer;
 }
+
+#card:hover #play-btn{
+visibility: visible;
+transition: all 0.75 ease-in-out;
+}
+
 
 /* FOOTER */
-#social-icons button{
+#social-icons button {
     background-color: #727272;
     filter: brightness(0.30);
 }
-#social-icons button>.bi{
+
+#social-icons button>.bi {
     color: white;
 
 }
-#social-icons button:hover{
+
+#social-icons button:hover {
     background-color: #727272;
     filter: brightness(1.50);
 
@@ -59,15 +97,19 @@ main {
     padding-right: 0;
     height: 100vh;
 }
+
 .bg-black {
     background-color: black;
 }
+
 .text-grey {
     color: lightgray;
 }
+
 .text-grey:hover {
     color: white;
 }
+
 .img-playlist-sidebar {
     width: 1.8rem;
     height: 1.8rem;
@@ -76,8 +118,9 @@ main {
     align-items: center;
     font-size: 1rem;
     border-radius: 4px;
-    
+
 }
+
 #fixed-sidebar-sx .nav.flex-column img {
     width: 1.8rem;
     height: 1.8rem;
@@ -95,12 +138,13 @@ main {
     background-color: #004537;
     color: #149643;
 }
+
 #fixed-sidebar-sx .sticky-top {
     border-bottom: 1px solid grey;
 }
 
 .sidebar-scroll {
-    
+
     position: fixed;
     height: 100vh;
     width: 17%;
@@ -110,40 +154,44 @@ main {
 html::-webkit-scrollbar-track {
     background: black;
 }
+
 .sidebar-scroll::-webkit-scrollbar-track {
     background: black;
 }
 
-.sidebar-scroll::-webkit-scrollbar{
-    width:10px;
-    
-}
-html::-webkit-scrollbar{
-    width:10px;
-    
-}
-    
-.sidebar-scroll::-webkit-scrollbar-thumb{
-  background:grey;
+.sidebar-scroll::-webkit-scrollbar {
+    width: 10px;
 
 }
 
-html::-webkit-scrollbar-thumb{
-  background:grey;
+html::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background: grey;
+
+}
+
+html::-webkit-scrollbar-thumb {
+    background: grey;
 
 }
 
 .friends {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: flex-start;
 
 }
+
 .friends img {
     width: 40px;
     height: 40px;
     border-radius: 40px;
 }
+
 .friends p {
     font-size: 13px;
 }
@@ -156,7 +204,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 #player i:hover {
-   opacity: 1;
+    opacity: 1;
 }
 
 #player {
@@ -169,46 +217,46 @@ html::-webkit-scrollbar-thumb{
     background-color: gray;
     height: 3px;
     width: 38vw;
-    
-  }
 
-  .bi-skip-start-fill, .bi-skip-end-fill {
+}
+
+.bi-skip-start-fill,
+.bi-skip-end-fill {
     font-size: 25px;
-  }
+}
 
-  #progress2 {
-    
+#progress2 {
+
     color: white;
     background-color: gray;
     height: 4px;
     width: 7vw;
     border-radius: 10px;
-  }
+}
 
-  .bi-volume-down {
+.bi-volume-down {
     font-size: 25px;
-  }
+}
 
-  .time {
+.time {
     color: white;
     padding: 0px;
     width: 33px;
     margin-bottom: 22px;
-  }
+}
 
-  @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
     #progress {
-      width: 28vw;      
+        width: 28vw;
     }
 
     #progress2 {
-      display: none;
+        display: none;
     }
 }
 
 @media only screen and (max-width: 768px) {
-  #progress {
-    width: 12vw;    
-  }
+    #progress {
+        width: 12vw;
+    }
 }
-
