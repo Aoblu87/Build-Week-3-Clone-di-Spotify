@@ -1,5 +1,4 @@
 const SearchInput = document.querySelector('#SearchBar')
-let timeoutId;
 
 async function getData(query) {
     const response = await fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=' + query)
@@ -53,28 +52,30 @@ function formatTime(time) {
 
 function playAudio(id) {
     const target = document.querySelector(`#_${id}`)
-    const cover = target.querySelector('img')
     const title = target.querySelector('h5')
-    const audio = target.querySelector(`audio`)
+    const CurrentAudio = target.querySelector(`audio`)
     const icon = target.querySelector(".play-button")
 
-    if (audio.paused) {
-        audio.play();
+
+    if (CurrentAudio.paused) {
+
+        CurrentAudio.play();
         icon.innerHTML = '<i class="bi bi-pause-fill text-white"></i>'
         icon.classList.toggle("active")
         title.style.color = "var(--color-green)"
 
-        audio.addEventListener('ended', function () {
+        CurrentAudio.addEventListener('ended', function () {
             icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
             icon.classList.remove("active")
             title.style.color = "#fff"
         });
 
     } else {
-        audio.pause();
+        CurrentAudio.pause();
         icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>'
         icon.classList.toggle("active")
         title.style.color = "#fff"
     }
-}
 
+    
+}
