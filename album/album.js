@@ -4,13 +4,12 @@ const id = params.get("id");
 const ArtisInfo = document.querySelector(".ArtistInfo") // X SIDEBAR
 const ArtistSongs = document.querySelector(".Top10Songs")// X SIDEBAR
 
-
 const main = document.querySelector("#main")
 let number // X SIDEBAR
 let check  // X SIDEBAR
 
  async function GetAlbum() { 
-         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/754535`)
+         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
          const result = await response.json()
          console.log(result)
          return result
@@ -64,6 +63,33 @@ try {
     height: 100vh;
     width: -webkit-fill-available;"
             class="mt-2">
+            <div id="top-icon" class="row p-2 sticky-top m-0">
+          <div id="nav-icon" class="col d-flex align-items-center ">
+
+            <button
+              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+              <i class="bi bi-arrow-left"></i></i></button>
+            <button
+              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+              <i class="bi bi-arrow-right"></i></button>
+          </div>
+
+          <div id="user-icon" class="col d-flex align-items-center justify-content-end">
+            <button
+              class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-pill w-25 h-75 m-0 p-0 me-2">
+              <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
+            <button
+              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+              <i class="bi bi-bell"></i></button>
+            <button
+              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+              <i class="bi bi-person"></i></i></button>
+          </div>
+
+
+
+
+        </div>
             <div class="title-image-info" style="
             height: 40vh;
             display: flex;
@@ -152,7 +178,8 @@ try {
                             <div class="me-4 pe-3">
                                 <p class="m-0 text-grey">${song.duration}</p>
                             </div>
-                        </div>
+                            
+            </div>
 
 
             `
