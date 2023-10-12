@@ -1,0 +1,137 @@
+#fixed-sidebar-sx {  /*X SIDERBAR */
+    flex: 0 0 auto;
+    width: 22%;
+    padding-right: 0;
+    height: 100%;
+    position: sticky;
+    top: 0;
+  }
+  
+  .bg-grey { /*X SIDERBAR */
+    background-color: #121212;
+  }
+  
+  .text-grey { /*X SIDERBAR */
+    color: lightgray;
+  }
+  #fixed-sidebar-sx .sticky-top { /*X SIDERBAR */
+    border-bottom: 1px solid grey;
+  }
+  
+  .sidebar-scroll { /*X SIDERBAR */
+    position: fixed;
+      width: 21.1%;
+      overflow: auto;
+      top: auto;
+      height: -webkit-fill-available;
+      margin-bottom: 97px;
+      border-radius: 0 0 20px 20px;
+      -webkit-box-shadow: inset 5px 34px 17px -30px #000000;
+      box-shadow: inset 5px 34px 17px -30px #000000;
+  
+  }
+  
+  .sidebar-top { /*X SIDERBAR */
+    position: sticky;
+    top: 0;
+    height: auto;
+  }
+  
+  .sidebar-button { /*X SIDERBAR */
+    background-color: #232323;
+    border-radius: 20px;
+    padding-block: 7px;
+    padding-inline: 10px;
+  }
+  
+  
+  
+  .sidebar-scroll::-webkit-scrollbar-track { /*X SIDERBAR */
+    background: #292929;
+    margin-block: 27px;
+  }
+   
+  .sidebar-scroll::-webkit-scrollbar { /*X SIDERBAR */
+    width: 10px;
+  
+  
+  }
+  
+  .sidebar-scroll::-webkit-scrollbar-thumb { /*X SIDERBAR */
+    background: grey;
+  
+  }
+  
+  .scroollbar-main::-webkit-scrollbar-track { /*X SIDERBAR */
+    background: linear-gradient(180deg, #FFEB3B, black);
+    margin-block: 27px;
+  }
+  
+  .scroollbar-main::-webkit-scrollbar { /*X SIDERBAR */
+    width: 10px;
+  
+  
+  }
+  
+  .scroollbar-main::-webkit-scrollbar-thumb { /*X SIDERBAR */
+    background: #9E9E9E;
+  
+  }
+  
+  
+  .ArtistInfo img { /*X SIDERBAR */
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: fill;
+  }
+  .dot-pulse { /*X SIDERBAR */
+    --uib-size: 40px;
+    --uib-speed: 1.3s;
+    --uib-color: white;
+    scale: 0.5;
+  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--uib-size);
+    height: calc(var(--uib-size) * 0.27);
+  }
+  
+  .dot-pulse__dot, /*X SIDERBAR */
+  .dot-pulse::before,
+  .dot-pulse::after {
+    content: '';
+    display: block;
+    height: calc(var(--uib-size) * 0.18);
+    width: calc(var(--uib-size) * 0.18);
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transform: scale(0);
+  }
+  
+  .dot-pulse::before { /*X SIDERBAR */
+    animation: pulse var(--uib-speed) ease-in-out infinite;
+  }
+  
+  .dot-pulse__dot { /*X SIDERBAR */
+    animation: pulse var(--uib-speed) ease-in-out
+      calc(var(--uib-speed) * 0.125) infinite both;
+  }
+   
+  .dot-pulse::after { /*X SIDERBAR */
+    animation: pulse var(--uib-speed) ease-in-out
+      calc(var(--uib-speed) * 0.25) infinite;
+  }
+  
+  @keyframes pulse { 
+    0%,
+    100% {
+      transform: scale(0);
+    }
+  
+    50% {
+      transform: scale(1.5);
+    }
+  }

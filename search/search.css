@@ -18,17 +18,6 @@ body{
     min-height: 100vh;
 }
 
-body::before{
-    content: "";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background: linear-gradient(to top, var(--color-black), transparent);
-    z-index: 5;
-}
-
 .bg-dark{
     background-color: var(--color-grey) !important;
 }
