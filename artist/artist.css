@@ -47,6 +47,7 @@
 
 #player {
     background-color: black;
+    
 }
 
 #progress {
@@ -154,22 +155,35 @@
   border-radius: 50px;
 }
 
+.playlist img {
+  width: 60px;
+}
+
+.playlistHere span {
+  color: white;
+}
+
+.playlist {
+  margin-bottom: 100px;
+}
+
 /*SIDEBAR*/
 #fixed-sidebar-sx {
   flex: 0 0 auto;
-  width: 17%;
+  width: 20%;
   padding-right: 0;
-  height: 100vh;
+  height: auto;
+  
 }
-.bg-black {
-  background-color: black;
+
+.bg-grey {
+background-color: #292929;
 }
+
 .text-grey {
   color: lightgray;
 }
-.text-grey:hover {
-  color: white;
-}
+
 .img-playlist-sidebar {
   width: 1.8rem;
   height: 1.8rem;
@@ -180,7 +194,7 @@
   border-radius: 4px;
   
 }
-#fixed-sidebar-sx .nav.flex-column img {
+#fixed-sidebar-sx .sidebar-top .nav.flex-column img {
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 4px;
@@ -202,27 +216,39 @@
 }
 
 .sidebar-scroll {
-  
-  position: fixed;
-  height: 100vh;
-  width: 17%;
+position: fixed;
+  width: 19%;
   overflow: auto;
+  top: auto;
+  height: -webkit-fill-available;
+  margin-bottom: 97px;
+  border-radius: 20px;
+}
+.sidebar-top {
+  position: sticky;
+  top: 0;
+  height: auto;
 }
 
 html::-webkit-scrollbar-track {
   background: black;
 }
 .sidebar-scroll::-webkit-scrollbar-track {
-  background: black;
+background: #292929;
+margin-block: 27px;
 }
 
 .sidebar-scroll::-webkit-scrollbar{
   width:10px;
   
+  
 }
 html::-webkit-scrollbar{
   width:10px;
   
+}
+#fixed-sidebar-sx::-webkit-scrollbar{
+  width: 0;
 }
   
 .sidebar-scroll::-webkit-scrollbar-thumb{
@@ -234,26 +260,39 @@ html::-webkit-scrollbar-thumb{
 background:grey;
 
 }
+.ArtistInfo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: fill;
+}
 
-.friends {
-  display: flex;
-  justify-content:space-between;
-  align-items: flex-start;
 
-}
-.friends img {
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
-}
-.friends p {
-  font-size: 13px;
-}
 
 #main {
   background-color: #1F1F1F;
 }
 
+.list-group-item {
+    padding: 0;
+    background-color: transparent;
+    border: transparent;
+    color: white;
+    
+}
+
+li.list-group-item::before {
+  position: relative;
+  top: 50px;
+}
+
+ol {
+  
+}
+
+.icons {
+  width: 20%;
+}
 
 /* LOADER */
 .jelly {
@@ -328,3 +367,15 @@ background:grey;
 	  transform: scale(0.65) translateX(75%);
 	}
   }
+
+  /* MOBILE */
+
+  @media (max-width: 992px) { 
+    #fixed-sidebar-sx, .sidebar-scroll {
+      display: none;
+    }
+
+    #main {
+      width: 100%;
+    }
+   }
