@@ -47,7 +47,7 @@ try {
         DisplayAlbum(AlbumData)
         DisplayTableSong(AlbumData)
 
-        const RandomArtistData = await  GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
+        const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
         DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
    
  }

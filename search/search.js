@@ -30,7 +30,7 @@ async function displayResults(results) {
         row.innerHTML = data.map(({ album, artist, title, duration, preview, id }) => /*html*/`
     
         <div class="row mb-4" id="_${id}" onclick="playAudio(${id})">
-            <div class="col-2 col-md-1">
+            <div class="col-2 col-md-1 pe-0">
                 <div style="position: relative">
                     <img src="${album.cover_big}" alt="" class="img-fluid rounded">
                     <audio src="${preview}"></audio>
