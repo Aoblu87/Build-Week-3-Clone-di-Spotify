@@ -51,7 +51,14 @@ async function loadData(id) {
                           <img class="sfondo-img" src="${data.picture_xl}" alt="">  
                           <p class="artista-verificato"><i class="bi bi-patch-check-fill"></i> Artista verificato</p>
                           <p class="artist-name">${data.name}</p>
-                          <p class="ascoltatori-mensili">${data.nb_fan} ascoltatori mensili</p>        
+                          <p class="ascoltatori-mensili">${data.nb_fan} ascoltatori mensili</p>   
+                          
+                          <div id="frecce">
+                          <button disabled class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-3">
+                              <i class="bi bi-arrow-left"></i></i></button>
+                          <button disable class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-3">
+                              <i class="bi bi-arrow-right"></i></button>
+                          </div>
 
                           <div id="user-icon" class="col d-flex align-items-center justify-content-end">
                               <button class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white  rounded-pill w-25 h-75 m-0 p-0 me-2">
