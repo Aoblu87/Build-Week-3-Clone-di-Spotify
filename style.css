@@ -118,7 +118,7 @@ main {
  #footer-list >li{
     font-size: 10pt;
  }
- #copyrights p{
+ #copyrights.p{
     font-size: 10pt;
  }
 

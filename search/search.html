@@ -20,6 +20,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <!-- SIDEBAR -->
             <div class="d-none d-md-block" id="fixed-sidebar-sx">
                 <div class="sidebar-top pt-2 mx-2">
                     <div class="nav flex-column">
@@ -100,7 +101,9 @@
                 </div>
             </div>
 
+            <!-- MAIN CONTENT -->
             <div class="col" id="main">
+                <!-- INPUT TAB -->
                 <div class="container">
                     <h3 class="my-5 fw-bold">Cerca</h3>
                     <div class="rounded-pill py-3 px-4 bg-dark d-flex">
@@ -110,6 +113,7 @@
                             placeholder="Cosa vuoi ascoltare?">
                     </div>
                 </div>
+                <!-- DISPLAY TAB -->
                 <div class="container main mt-5">
                     <h3 class="text-center text-md-start fw-bold fs-5">Sfoglia tutto</h3>
                     <div class="row g-4 my-4">
@@ -198,8 +202,9 @@
 
                 <!-- FOOTER -->
                 <footer class="container pt-5">
-                    <hr>
+                    <hr> <!-- SEPARATORE -->
                     <div class="row justify-content-between">
+                        <!-- PRIMA COLONNA: LINKS -->
                         <div class="col-12 col-md-6 d-flex ">
                             <div class="row mb-3">
                                 <div class="col-4">
@@ -220,7 +225,6 @@
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div class="col-4">
                                     <h6 class="text-white">Communities</h6>
                                     <ul class="nav flex-column fs-6">
@@ -241,7 +245,6 @@
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div class="col-4">
                                     <h6 class="text-white">Useful links</h6>
                                     <ul class="nav flex-column fs-6">
@@ -258,7 +261,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- SECONDA COLONNA: SOCIALS -->
                         <div class="col-12 col-md-6 d-flex justify-content-start justify-content-md-end">
                             <div id="social-icons" class="mb-3 d-flex align-items-start">
                                 <button type="button"
@@ -272,33 +275,34 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class="d-flex flex-column flex-md-row justify-content-between pt-4">
-                            <ul id="footer-list" class="list-group list-group-horizontal list-unstyled d-flex flex-wrap mb-4 row-gap-2 column-gap-4">
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Legal</a>
-                                </li>
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Privacy
-                                        Center</a></li>
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Privacy
-                                        Policy</a></li>
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Cokkie
-                                        Settings</a></li>
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">About
-                                        Ads</a></li>
-                                <li><a href="#"
-                                        class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Accessibility</a>
-                                </li>
+                    <hr> <!-- SEPARATORE -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
+                        <!-- FOOTER LEGAL LINKS -->
+                        <ul id="footer-list"
+                            class="list-group list-group-horizontal list-unstyled d-flex flex-wrap row-gap-2 column-gap-4">
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Legal</a>
+                            </li>
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Privacy
+                                    Center</a></li>
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Privacy
+                                    Policy</a></li>
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Cokkie
+                                    Settings</a></li>
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">About
+                                    Ads</a></li>
+                            <li><a href="#"
+                                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0">Accessibility</a>
+                            </li>
 
 
-                            </ul>
-                        <div id="copyrights" class="text-white-50">
-                            <p>© 2023 Spotify AB</p>
-                        </div>
+                        </ul>
+                        <!-- COPYRIGHTS -->
+                        <p id="copyrights" class="text-white-50 mt-4">© 2023 Spotify AB</p>
                     </div>
                 </footer>
             </div>

@@ -1,6 +1,5 @@
 const ArtisInfo = document.querySelector(".ArtistInfo")
 const ArtistSongs = document.querySelector(".Top10Songs")
-const main = document.querySelector("#main")
 let number
 let check  
 
