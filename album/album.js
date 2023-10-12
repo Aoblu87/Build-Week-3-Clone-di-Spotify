@@ -72,6 +72,12 @@ try {
       <button 
         class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
         <i class="bi bi-arrow-right"></i></button>
+        <div class="d-flex justify-content-center align-items-center me-4 text-light"
+                        style="background-color: green; padding-inline: 10px;border-radius: 50px; font-size: 35px;">
+                        <i class="bi bi-play-fill"></i>
+        </div>
+        
+        
     </div>
 
     <div id="user-icon" class="col d-flex align-items-center justify-content-end">
