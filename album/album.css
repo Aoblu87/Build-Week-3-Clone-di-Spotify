@@ -388,3 +388,25 @@ bottom: 230px;
 #copyrights p{
   font-size: 10pt;
 }
+#top-icon {
+  height: 4rem;
+  background-color: #e7d541;
+
+}
+
+/* #top-icon .bi{
+  background-color: #071113;
+  border-radius: 50px;
+} */
+#nav-icon button {
+  width: 2.5rem;
+}
+
+#user-icon button:nth-child(2) {
+  width: 2rem;
+
+}
+
+#user-icon button:nth-child(3) {
+  width: 2rem;
+}
