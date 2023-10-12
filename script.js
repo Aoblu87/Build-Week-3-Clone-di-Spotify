@@ -92,7 +92,7 @@ function displayFavorites(result, nodeHtml){
 
         nodeHtml.innerHTML += /*html*/`
                         <div id="${song.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
-                            <div class="row ">
+                            <div class="row  ">
                                 <div class="col-md-2 d-flex p-0">
                                     <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
                                     <img id="img-greetings" src="${song.album.cover_xl}" class="img-fluid rounded-start" alt="${song.title}">
@@ -129,7 +129,7 @@ function displayResults(result, nodeHtml) {
         const song = songs[i]
 
         nodeHtml.innerHTML += /*html*/`
-    <div id="${song.id}" class="col-md-2">
+    <div id="${song.id}" class="col-12 col-md-2">
     <div id="card" class="card-results position-relative rounded p-3">
         <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
             <img src="${song.album.cover_xl}" class="card-img-top rounded-circle" alt="${song.title}">

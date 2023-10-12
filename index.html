@@ -13,14 +13,14 @@
 
 <body>
   <div class="container-fluid d-flex m-0 p-0">
-    <div class="row">
+    
 
       <!-- SIDEBAR -->
-      <div class="col bg-black" id="fixed-sidebar-sx">
+      <div class="col bg-black d-none d-lg-block" id="fixed-sidebar-sx">
         <div class="sticky-top ps-3 py-2 pe-3">
           <div class="nav flex-column">
             <p class="text-light pb-2 fw-bolder m-0 fs-3 text"> ...</p>
-            <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
+            <a href="#_" class="text-decoration-none text-grey py-2 d-flex flex-column align-items-center"><i
                 class="bi bi-house-door-fill fs-5 text me-2"></i> <span class="fw-bolder">Home</span></a>
             <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
                 class="bi bi-search fs-5 text me-2"></i> <span class="fw-bolder">Cerca</span></a>
@@ -143,10 +143,10 @@
         </div>
       </div>
       <!-- MAIN -->
-      <main class="col d-flex flex-column my-2 p-0">
+      <main class="col d-flex flex-column mb-lg-2 p-0">
 
         <!-- navbar del main -->
-        <div id="top-icon" class="row p-2 sticky-top m-0">
+        <div id="top-icon" class="row  d-none d-md-inline-flex p-2 sticky-top m-0">
           <div id="nav-icon" class="col d-flex align-items-center ">
 
             <button disabled
@@ -168,56 +168,57 @@
               class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
               <i class="bi bi-person"></i></i></button>
           </div>
-
-
-
-
         </div>
+
+
+
+
         <div class="row flex-column mx-2 mb-5">
           <!-- Section 1 -->
-          <div class="col">
-            <a href=""
-              class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
-              <h2 class="text-white my-3">Good afternoon</h2>
 
-            </a>
-            <div id="greetings" class="greetings-container row justify-content-between p-2">
+          <a href=""
+            class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+            <h2 class="text-white my-3">Good afternoon</h2>
 
-            </div>
+          </a>
+          <div id="greetings"
+            class="greetings-container row row-cols-3 row-cols-md-2 row-cols-lg-3 g-2 g-lg-3 justify-content-evenly p-2">
+
           </div>
+
           <!-- Section 2 -->
 
-          <div class="col my-4">
-            <a href=""
-              class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
-              <h4 class="text-white my-4">Made for you</h4>
 
-            </a>
-            <div id="made-for-you-section" class="results-container row">
+          <a href=""
+            class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+            <h4 class="text-white my-4">Made for you</h4>
 
-            </div>
+          </a>
+          <div id="made-for-you-section" class="results-container row">
+
+
           </div>
           <!-- Section 3 -->
-          <div class="col my-4">
-            <a href=""
-              class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
-              <h4 class="text-white my-4">Recently played</h4>
 
-            </a>
-            <div id="recently-played-section" class="results-container row">
+          <a href=""
+            class="title-section link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+            <h4 class="text-white my-4">Recently played</h4>
 
-            </div>
+          </a>
+          <div id="recently-played-section" class="results-container row">
+
           </div>
+
 
 
         </div>
 
         <!-- FOOTER -->
         <footer class="row py-5 mx-3">
-          <div class="row justify-content-between">
-            <div class="col d-flex ">
+          <div class="row flex-column flex-md-row justify-content-between">
+            <div class="col d-flex flex-column flex-md-row">
 
-              <div class="col-6 col-md-2 mb-3">
+              <div class="col-12 col-lg-2 d-flex flex-column mb-3 me-lg-5">
                 <h6 class="text-white">Company</h6>
                 <ul class="nav flex-column fs-6">
                   <li class="nav-item mb-2"><a href="#"
@@ -232,7 +233,7 @@
                 </ul>
               </div>
 
-              <div class="col-6 col-md-2 mb-3">
+              <div class="col-12 col-lg-2 d-flex flex-column mb-3 mx-lg-5">
                 <h6 class="text-white">Communities</h6>
                 <ul class="nav flex-column fs-6">
                   <li class="nav-item mb-2"><a href="#"
@@ -253,7 +254,7 @@
                 </ul>
               </div>
 
-              <div class="col-6 col-md-2 mb-3">
+              <div class="col-12 col-lg-2 d-flex flex-column mb-3 mx-lg-5">
                 <h6 class="text-white">Useful links</h6>
                 <ul class="nav flex-column fs-6">
                   <li class="nav-item mb-2"><a href="#"
@@ -269,15 +270,15 @@
               </div>
             </div>
 
-            <div class="col d-flex justify-content-end">
+            <div class="col d-flex justify-content-start justify-content-lg-end">
 
 
               <div id="social-icons" class="col-md-5 mb-3 d-flex justify-content-end align-items-start">
-                <button type="button" class="btn btn-outline-dark border-0 rounded-circle mx-2 fs-5 text-white"><i
+                <button type="button" class="border-0 rounded-circle me-2 fs-6 text-white"><i
                     class="bi bi-instagram "></i></button>
-                <button type="button" class="btn btn-outline-dark border-0 rounded-circle mx-2 fs-5"><i
+                <button type="button" class="border-0 rounded-circle mx-2 fs-6 text-white"><i
                     class="bi bi-facebook"></i></button>
-                <button type="button" class="btn btn-outline-dark border-0 rounded-circle mx-2 fs-5"><i
+                <button type="button" class="border-0 rounded-circle mx-2 fs-6 text-white"><i
                     class="bi bi-twitter"></i></button>
 
               </div>
@@ -289,17 +290,17 @@
             <div class="col-md-11">
 
               <ul id="footer-list" class="list-group list-group-horizontal list-unstyled">
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Legal</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy Center</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy Policy</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Cokkie Settings</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">About Ads</a></li>
-                <li ><a href="#"
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Legal</a>
+                </li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy
+                    Center</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy
+                    Policy</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Cokkie
+                    Settings</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">About
+                    Ads</a></li>
+                <li><a href="#"
                     class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Accessibility</a></li>
 
 
@@ -314,7 +315,9 @@
 
       </main>
     </div>
-    <section id="player" class="fixed-bottom">
+
+    <!-- PLAYER -->
+    <section id="player" class="fixed-bottom d-none d-lg-block">
       <div class="conteiner-fluid">
         <div class="row">
 
@@ -375,7 +378,7 @@
 
 
 
-  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
