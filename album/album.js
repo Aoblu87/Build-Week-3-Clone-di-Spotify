@@ -61,35 +61,35 @@ try {
     top: 0;
     overflow-y: auto;
     height: 100vh;
-    width: -webkit-fill-available;"
-            class="mt-2">
-            <div id="top-icon" class="row p-2 sticky-top m-0">
-          <div id="nav-icon" class="col d-flex align-items-center ">
+    width: -webkit-fill-available;" class="mt-2">
+           
+    <div id="top-icon" class="row p-2 sticky-top m-0">
+    <div id="nav-icon" class="col d-flex align-items-center ">
 
-            <button
-              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
-              <i class="bi bi-arrow-left"></i></i></button>
-            <button
-              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
-              <i class="bi bi-arrow-right"></i></button>
-          </div>
+      <button 
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+        <i class="bi bi-arrow-left"></i></i></button>
+      <button 
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+        <i class="bi bi-arrow-right"></i></button>
+    </div>
 
-          <div id="user-icon" class="col d-flex align-items-center justify-content-end">
-            <button
-              class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-pill w-25 h-75 m-0 p-0 me-2">
-              <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
-            <button
-              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
-              <i class="bi bi-bell"></i></button>
-            <button
-              class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
-              <i class="bi bi-person"></i></i></button>
-          </div>
-
-
+    <div id="user-icon" class="col d-flex align-items-center justify-content-end">
+      <button
+        class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-pill w-25 h-75 m-0 p-0 me-2">
+        <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
+      <button
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+        <i class="bi bi-bell"></i></button>
+      <button
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+        <i class="bi bi-person"></i></i></button>
+    </div>
 
 
-        </div>
+
+
+  </div>
             <div class="title-image-info" style="
             height: 40vh;
             display: flex;
@@ -108,8 +108,9 @@ try {
                         <div class="d-flex justify-content-start align-items-center">
                             <img src="${AlbumData.contributors[0].picture}"
                                 alt="" style="width: 25px; height: 25px; border-radius: 25px;">
-                            <p class="m-0" style="font-size: 14px;"><span class="fw-bolder"><a class="text-decoration-none text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">${AlbumData.artist.name}</a></span>•${AlbumData.nb_tracks}•${AlbumData.duration}
-                                minuti</p>
+                            <p class="m-0" style="font-size: 14px;"><span class="fw-bolder">
+                            <a class="text-decoration-none text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
+                            ${AlbumData.artist.name}</a></span> • ${AlbumData.nb_tracks} canzoni • ${formatTime(AlbumData.duration)} minuti</p>
                                 
                         </div>
 
@@ -176,7 +177,7 @@ try {
                                 </div>
                             </div>
                             <div class="me-4 pe-3">
-                                <p class="m-0 text-grey">${song.duration}</p>
+                                <p class="m-0 text-grey">${formatTime(song.duration)}</p>
                             </div>
                             
             </div>
@@ -204,7 +205,7 @@ try {
                                 </div>
                             </div>
                             <div class="me-4 pe-3">
-                                <p class="m-0 text-grey">${song.duration}</p>
+                                <p class="m-0 text-grey">${formatTime(song.duration)}</p>
                             </div>
                         </div>
             `
@@ -247,3 +248,13 @@ function randomnumber() { //funzione per numero random // X SIDEBAR
 }
 
 const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec // X SIDEBAR
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+
+    const formattedMinutes = String(minutes).padStart(2, '0'); // Aggiunge uno zero iniziale se necessario
+    const formattedSeconds = String(seconds).padStart(2, '0'); // Aggiunge uno zero iniziale se necessario
+
+    return `${formattedMinutes}:${formattedSeconds}`;
+}

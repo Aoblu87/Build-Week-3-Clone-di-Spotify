@@ -361,7 +361,6 @@ opacity: 1;
 #user-icon {
 color: white;
 z-index: 200000;
-position: relative;
 bottom: 230px;
 
 }
