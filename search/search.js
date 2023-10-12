@@ -50,50 +50,75 @@ async function displayResults(results) {
     }
 }
 
-async function displayHome(){
+async function displayHome() {
     row.innerHTML = `
 
     `
 }
 
 async function playAudio(id) {
-    const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + id)
-    const data = await response.json()
 
-    const { title, album, artist } = data
+    /* FETCH DEI DATI CORRISPONDEDNTI ALLA CANZONE */
+    const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + id);
+    const data = await response.json();
 
-    const target = document.querySelector(`#_${id}`)
+    const { title, album, artist } = data;
 
-    const songName = target.querySelector('h5')
-    const CurrentAudio = target.querySelector(`audio`)
-    const icon = target.querySelector(".play-button")
+    /* RECUPERO DATI NECESSARI */
+    const target = document.querySelector(`#_${id}`);
+    const player = document.getElementById('player');
 
+    const songName = target.querySelector('h5');
+    const currentAudio = target.querySelector('audio');
+    const icon = target.querySelector(".play-button");
 
-    if (CurrentAudio.paused) { /* SE L'AUDIO E' IN PAUSA O NON PARTITO*/
+    /* CONTROLLA SE CI SONO CANZONI IN RIPRODUZIONE */
+    const previousPlaying = document.querySelector('.playing');
+    if (previousPlaying) {
+        const previousIcon = previousPlaying.querySelector('.play-button');
+        const previousSongName = previousPlaying.querySelector('h5');
+        const previousAudio = previousPlaying.querySelector('audio');
 
-        CurrentAudio.play();
+        /* SE E' LA STESSA CANZONE FERMA L'AUDIO */
+        if (previousAudio === currentAudio) {
+            previousAudio.pause();
+            previousIcon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
+            previousIcon.classList.remove('active')
+            previousSongName.style.color = "#fff";
+            previousPlaying.classList.remove('playing');
+            
+            return;
+        }
 
-        player.querySelector('img').src = album.cover_big
-        player.querySelector('h5').innerHTML = title
-        player.querySelector('p').innerHTML = artist.name
+        /* SE NON E' LA STESSA FERMA LA CANZONE DI PRIMA */
+        previousAudio.pause()
+        previousIcon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
+        previousIcon.classList.remove('active')
+        previousSongName.style.color = "#fff";
 
-        icon.innerHTML = '<i class="bi bi-pause-fill text-white"></i>'
-        icon.classList.toggle("active")
-        songName.style.color = "var(--color-green)"
-
-        CurrentAudio.addEventListener('ended', function () {
-            icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
-            icon.classList.remove("active")
-            songName.style.color = "#fff"
-        });
-
-    } else { /* SE L'AUDIO E' IN RIPRODUZIONE */
-        CurrentAudio.pause();
-
-        icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>'
-        icon.classList.toggle("active")
-        songName.style.color = "#fff"
+        previousPlaying.classList.remove('playing');
     }
 
+    /* AGGIUNGE LA CLASSE PLAYING ALLA CANZONE IN RIPRODUZIONE */
+    currentAudio.play();
+    target.classList.add('playing');
+
+    /* IMPOSTA IMFORMAZIONI NEL PLAYER */
+    player.querySelector('img').src = album.cover_big;
+    player.querySelector('h5').innerHTML = title;
+    player.querySelector('p').innerHTML = artist.name;
+
+    icon.innerHTML = '<i class="bi bi-pause-fill text-white"></i>';
+    icon.classList.add("active");
+    songName.style.color = "var(--color-green)";
+
+    /* QUANDO LA CANZONE FINISCE SI STOPPA */
+    currentAudio.addEventListener('ended', function () {
+        icon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
+        icon.classList.remove("active");
+        songName.style.color = "#fff";
+    });
 
 }
+
+
