@@ -2,8 +2,10 @@
   flex: 0 0 auto;
   width: 22%;
   padding-right: 0;
-  height: 100vh;
-  }
+  height: 100%;
+  position: sticky;
+  top: 0;
+}
 
 .bg-grey {
   background-color: #121212;
@@ -12,27 +14,21 @@
 .text-grey {
   color: lightgray;
 }
+
 #fixed-sidebar-sx .sticky-top {
   border-bottom: 1px solid grey;
 }
 
 .sidebar-scroll {
   position: fixed;
-    width: 21.1%;
-    overflow: auto;
-    top: auto;
-    height: -webkit-fill-available;
-    margin-bottom: 97px;
-    border-radius: 0 0 20px 20px;
-    -webkit-box-shadow: inset 5px 34px 17px -30px #000000;
-    box-shadow: inset 5px 34px 17px -30px #000000;
-
-}
-
-.sidebar-top {
-  position: sticky;
-  top: 0;
-  height: auto;
+  width: 20.95%;
+  overflow: auto;
+  top: auto;
+  height: -webkit-fill-available;
+  margin-bottom: 97px;
+  border-radius: 0 0 20px 20px;
+  -webkit-box-shadow: inset 5px 34px 17px -30px #000000;
+  box-shadow: inset 5px 34px 17px -30px #000000;
 }
 
 .sidebar-button {
