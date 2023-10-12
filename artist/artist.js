@@ -51,7 +51,16 @@ async function loadData(id) {
                           <img class="sfondo-img" src="${data.picture_xl}" alt="">  
                           <p class="artista-verificato"><i class="bi bi-patch-check-fill"></i> Artista verificato</p>
                           <p class="artist-name">${data.name}</p>
-                          <p class="ascoltatori-mensili">${data.nb_fan} ascoltatori mensili</p>                 
+                          <p class="ascoltatori-mensili">${data.nb_fan} ascoltatori mensili</p>        
+
+                          <div id="user-icon" class="col d-flex align-items-center justify-content-end">
+                              <button class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white  rounded-pill w-25 h-75 m-0 p-0 me-2">
+                                  <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
+                              <button class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-5">
+                                   <i class="bi bi-bell"></i></button>
+                              <button class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-5">
+                                   <i class="bi bi-person"></i></i></button>
+                          </div>         
                          `;
     }
 
@@ -102,8 +111,12 @@ async function loadData(id) {
             
               <li class="list-group-item">
               <div class="d-flex align-items-center lista">    
-                 <span class="img-album"><img class="album-cover col-3 mx-5 my-2" src="${song.album.cover_small}" alt=""></span>
-                 <span class="song-title list-group-item col-4 my-2">${song.title}</span>
+                 <div class="img-album" id="_${song.id}" onclick="playAudio(${song.id})">
+                     <img class="album-cover col-3 mx-5 my-2" src="${song.album.cover_small}" alt="">
+                     <div class="play-button d-none"><i class="bi bi-play-fill play-over position-relative"></div>
+                     </i><audio src="${song.preview}"></audio>
+                 </div>
+                 <h5 class="song-title list-group-item col-4 my-2">${song.title}</h5>
                  <span class="song-rank list-group-item col-2 my-2">${song.rank}</span>
                  <span class="song-duration list-group-item col-2 my-2">${timeStampFromDuration(song.duration)}</span> 
               </div>
@@ -112,13 +125,6 @@ async function loadData(id) {
             ).join("")
       }
 
-//const albumPlay = document.querySelector(".img-album");
-
-//albumPlay.innerHTML = /*html*/`
-   //<div class="play-album position-relative">
-      
-      
-//`
 
 
     window.onload = async function () {
@@ -129,8 +135,8 @@ async function loadData(id) {
           const playlistData = await loadData2(id)
           displayPlaylist(playlistData)
 
-          const SongData = await GetSongFromRandomArtist()     
-          DisplaySongFromRandomArtist(SongData)
+          const RandomArtistData = await GetSongFromRandomArtist()     
+          DisplaySongFromRandomArtist(RandomArtistData)
 
       } catch (error) {
           console.log(error)
@@ -148,37 +154,79 @@ async function loadData(id) {
 }
 
 
-/*const numberSong = document.querySelector('.numberSong')
-const song = data.data
-function displayNumberSong (song) {
-  for (let i = 0; i < song.length; i++) {
-  numberSong[i].textContent = i + 1;
-  console.log(song.length)
+// FUNZIONE PLAY SONGS
 
-}}
+async function playAudio(id) {
+  const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + id)
+  const data = await response.json()
 
-displayNumberSong(numberSong)*/
+  const { title, album, artist } = data
+
+  const target = document.querySelector(`#_${id}`)
+
+  const songName = target.querySelector(".song-title")
+  const CurrentAudio = target.querySelector(`audio`)
+  const icon = target.querySelector(".play-button")
 
 
-/*function addNumbersToElements(elements) {
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].textContent = i + 1;
+  if (CurrentAudio.paused) { /* SE L'AUDIO E' IN PAUSA O NON PARTITO*/
+
+      CurrentAudio.play();
+
+      player.querySelector('.img-player').src = album.cover_small
+      player.querySelector('.title-player').innerHTML = title
+      player.querySelector('.artist-player').innerHTML = artist.name
+      player.querySelector('.play-player').innerHTML = '<i class="bi bi-pause-fill text-white fs-2 mx-2"></i>'
+
+      icon.innerHTML = '<i class="bi bi-pause-fill text-white play-over"></i>'
+      icon.classList.toggle("active")
+      
+
+      CurrentAudio.addEventListener('ended', function () {
+          icon.innerHTML = '<i class="bi bi-play-fill text-white play-over"></i>'
+          icon.classList.remove("active")
+          
+      });
+
+  } else { /* SE L'AUDIO E' IN RIPRODUZIONE */
+      CurrentAudio.pause();
+
+      player.querySelector('.play-player').innerHTML = '<i class="bi bi-play-circle-fill fs-2 mx-2"></i>'
+      icon.innerHTML = '<i class="bi bi-play-fill text-white play-over"></i>'
+      icon.classList.toggle("active")      
   }
-}*/
+}
 
+
+const imgPlayer = document.querySelector(".img-player")
+const titlePlayer = document.querySelector(".title-player")
+const artistPlayer = document.querySelector(".artist-player")
+
+
+
+
+
+// FUNZIONE SIDEBAR
 
 const ArtisInfo = document.querySelector(".ArtistInfo")
 const ArtistSongs = document.querySelector(".Top10Songs")
+const main = document.querySelector("#main")
 let number
 let check 
 
+// async function GetAlbum() {
+//         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
+//         const result = await response.json()
+//         return result.data
+       
+//     } 
 
- async function GetSongFromRandomArtist() {
+ async function GetSongFromRandomArtist() { // funzione che fetcha randomicamente un artista 
     try {
         document.querySelector(".waveform").classList.remove("d-none")
-        do {
-        await sleep(1500)
-        randomnumber()
+        do { //ciclo do while che cicla fino a quando non trova un array pieno
+        await sleep(1800) //funzione che fa fetchare ogni 1.5sec per non intasare il server
+        randomnumber() // funzione per avere un numero random 
         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
         const result = await response.json()
         check = result.data 
@@ -195,9 +243,7 @@ let check
         
     } 
 
-
-
-  function DisplaySongFromRandomArtist(SongData) {
+  function DisplaySongFromRandomArtist(SongData) { //display random artist nella sidebar 
 
      ArtisInfo.innerHTML = /*html*/ 
      `
@@ -225,8 +271,8 @@ let check
     ).join("")
   }
 
-function randomnumber() {
-    number = Math.floor(Math.random() * 50000) + 1
+function randomnumber() { //funzione per numero random
+    number = Math.floor(Math.random() * 5000) + 1
 }
 
-const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds))
+const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec
