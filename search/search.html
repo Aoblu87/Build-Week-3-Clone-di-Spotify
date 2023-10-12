@@ -14,110 +14,200 @@
 
     <!-- LOCAL CSS -->
     <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="../album/album.css">
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="fixed-sidebar-sx">
+                <div class="sidebar-top pt-2 mx-2">
+                    <div class="nav flex-column">
+                        <div class="bg-grey px-3" style="border-radius: 15px;">
+                            <div class="text-decoration-none py-2"><a
+                                    class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                                        class="bi bi-house-door fs-5 text me-2"></i> <span
+                                        class="fw-bolder">Home</span></a>
+                            </div>
+                            <div class="text-decoration-none py-2"><a
+                                    class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                                        class="bi bi-search fs-5 text me-2"></i> <span
+                                        class="fw-bolder">Cerca</span></a>
+                            </div>
 
-    <div class="container">
-        <h3 class="my-5 fw-bold">Cerca</h3>
-        <div class="rounded-pill py-3 px-4 bg-dark d-flex">
-            <span class="text-white me-3" onclick="displayResults(SearchBar.value)"><i class="bi bi-search"></i></span>
-            <input class="border-0 bg-transparent text-white w-100" type="text" id="SearchBar"
-                placeholder="Cosa vuoi ascoltare?">
+                        </div>
+                        <div class="bg-grey px-3" style="border-top: 5px solid black;
+                        border-radius: 15px 15px 0 0;">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div class="text-decoration-none py-2"><a
+                                        class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                                            class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua
+                                            Libreria</span></a>
+                                </div>
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="bi bi-plus-lg text-light fs-5"></i>
+                                    <i class="bi bi-arrow-right-short text-light fs-4"></i>
+                                </div>
+
+                            </div>
+                            <div class="d-flex mt-3 pb-2 justify-content-evenly" style="font-size: 0.8rem;">
+                                <div class=" sidebar-button d-flex justify-content-center align-items-center">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light ">
+                                        Playlist
+                                    </a>
+                                </div>
+                                <div class="sidebar-button d-flex justify-content-center align-items-center">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                        Podcast e show
+                                    </a>
+                                </div>
+                                <div class="sidebar-button d-flex justify-content-center align-items-center">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                        Album
+                                    </a>
+                                </div>
+                                <div class="sidebar-button d-flex justify-content-center align-items-center">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                                        Artisti
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-scroll mx-2 bg-grey">
+                    <div class="nav flex-column p-3 ">
+                        <div class="waveform d-none">
+                            <div class="waveform__bar"></div>
+                            <div class="waveform__bar"></div>
+                            <div class="waveform__bar"></div>
+                            <div class="waveform__bar"></div>
+                        </div>
+                        <div class="ArtistInfo text-grey">
+
+                        </div>
+                        <div class="Top10Songs">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col" id="main">
+
+                <div class="container">
+                    <h3 class="my-5 fw-bold">Cerca</h3>
+                    <div class="rounded-pill py-3 px-4 bg-dark d-flex">
+                        <span class="text-white me-3" onclick="displayResults(SearchBar.value)"><i
+                                class="bi bi-search"></i></span>
+                        <input class="border-0 bg-transparent text-white w-100" type="text" id="SearchBar"
+                            placeholder="Cosa vuoi ascoltare?">
+                    </div>
+                </div>
+                <div class="container main mt-5">
+                    <h3 class="text-center text-md-start fw-bold fs-5">Sfoglia tutto</h3>
+                    <div class="row g-4 my-4">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(39,133,106);">
+                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(180,155,200);">
+                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(39,133,106);">
+                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(180,155,200);">
+                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div class="container main mt-5">
-        <h3 class="text-center text-md-start fw-bold fs-5">Sfoglia tutto</h3>
-        <div class="row g-4 my-4">
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(39,133,106);">
-                    <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(180,155,200);">
-                    <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(39,133,106);">
-                    <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(180,155,200);">
-                    <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
-            </div>
-        </div>
-    </div>
+
+
 
     <div class="container-fluid mt-auto" style="position: sticky; bottom: 0; z-index: 100" id="player">
         <div class="row p-3 bg-dark d-flex align-items-center">
             <div class="col-8 col-md-4 px-0">
                 <div class="d-flex align-items-center">
-                    <img src="EPICODE LOGO.png"
-                        alt="" class="img-fluid rounded shadow me-3" style="width: 4rem">
+                    <img src="EPICODE LOGO.png" alt="" class="img-fluid rounded shadow me-3" style="width: 4rem">
                     <div class="TextCut">
                         <h5 class="mb-0 fs-6 fw-semibold TextCut">M4 Build Week</h5>
                         <p class="mb-0 text-white-50 TextCut">EPICODE</p>
@@ -144,6 +234,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="search.js"></script>
+    <script src="../album/album.js"></script>
 </body>
 
 </html>
