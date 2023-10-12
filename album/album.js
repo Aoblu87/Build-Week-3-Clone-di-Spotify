@@ -1,21 +1,23 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const ArtisInfo = document.querySelector(".ArtistInfo")
-const ArtistSongs = document.querySelector(".Top10Songs")
-const main = document.querySelector("#main")
-let number
-let check 
+const ArtisInfo = document.querySelector(".ArtistInfo") // X SIDEBAR
+const ArtistSongs = document.querySelector(".Top10Songs")// X SIDEBAR
 
- async function GetAlbum() {
-         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
+
+const main = document.querySelector("#main")
+let number // X SIDEBAR
+let check  // X SIDEBAR
+
+ async function GetAlbum() { 
+         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/754535`)
          const result = await response.json()
          console.log(result)
          return result
        
     } 
 
- async function GetSongFromRandomArtist() { // funzione che fetcha randomicamente un artista 
+ async function GetSongFromRandomArtist() {  // X SIDEBAR // funzione che fetcha randomicamente un artista 
 try {
     document.querySelector(".dot-pulse").classList.remove("d-none")
     do { //ciclo do while che cicla fino a quando non trova un array pieno
@@ -40,17 +42,17 @@ try {
  window.onload = async function () {
     
         
-        const AlbumData = await GetAlbum()
+        const AlbumData = await GetAlbum() // X SIDEBAR
         
         DisplayAlbum(AlbumData)
         DisplayTableSong(AlbumData)
 
-        const RandomArtistData = await  GetSongFromRandomArtist()
-        DisplaySongFromRandomArtist(RandomArtistData)
+        const RandomArtistData = await  GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
+        DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
    
  }
 
- function DisplayAlbum(AlbumData) {
+ function DisplayAlbum(AlbumData) { 
     main.innerHTML = /*html*/
     `
     <div class="scroollbar-main" style="    margin-bottom: 97px;
@@ -184,7 +186,7 @@ try {
   
  }
 
-  async function DisplaySongFromRandomArtist(RandomArtistData) { //display random artist nella sidebar 
+  async function DisplaySongFromRandomArtist(RandomArtistData) { //display random artist nella sidebar  // X SIDEBAR
 
         
      ArtisInfo.innerHTML = /*html*/ 
@@ -213,8 +215,8 @@ try {
     ).join("")
   }
 
-function randomnumber() { //funzione per numero random
+function randomnumber() { //funzione per numero random // X SIDEBAR 
     number = Math.floor(Math.random() * 5000) + 1
 }
 
-const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec
+const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec // X SIDEBAR
