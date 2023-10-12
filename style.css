@@ -27,15 +27,10 @@ main {
     /* background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212); */
     background-image: linear-gradient(
         180deg,
-        hsl(187deg 45% 11%) 0%,
-        hsl(187deg 40% 11%) 0%,
-        hsl(187deg 35% 10%) 2%,
-        hsl(188deg 30% 10%) 5%,
-        hsl(188deg 25% 9%) 9%,
-        hsl(188deg 21% 9%) 16%,
-        hsl(187deg 16% 9%) 26%,
-        hsl(187deg 12% 8%) 41%,
-        hsl(187deg 7% 8%) 64%,
+        hsl(0deg 0% 24%) 0%,
+        hsl(344deg 0% 19%) 2%,
+        hsl(344deg 0% 15%) 10%,
+        hsl(344deg 0% 11%) 31%,
         hsl(0deg 0% 7%) 100%
       );
 }
@@ -80,9 +75,9 @@ main {
 
 /* GREETINGS Section */
 
-#greetings{
-    justify-content: center;
-}
+/* #greetings{
+    width: 100%;
+} */
 
 
 #greetings >div{
@@ -100,6 +95,9 @@ main {
 
 /* CARDS */
 
+.results-container>div {
+    width: 14%;
+}
 
 #play-btn-container {
     inset: 108px 0 0 110px;
@@ -117,7 +115,6 @@ main {
 }
 .card-results{
     height: 18rem;
-  
 }
 
 
@@ -326,8 +323,3 @@ html::-webkit-scrollbar-thumb {
         width: 12vw;
     }
 }
-
-
-
-
-
