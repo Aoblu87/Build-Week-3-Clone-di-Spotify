@@ -13,7 +13,7 @@ async function loadData(id) {
     try {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
       const data = await response.json()
-  
+      console.log(data)
       return data
     } catch (error) {
       console.log(error)
