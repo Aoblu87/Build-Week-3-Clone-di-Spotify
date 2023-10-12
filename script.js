@@ -89,18 +89,18 @@ function displayFavorites(result, nodeHtml){
 
     for (let i = 0; i < 6; i++) {
         const song = songs[i]
-
+console.log(song)
         nodeHtml.innerHTML += /*html*/`
-                        <div id="${song.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
+                        <div id="${song.artist.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
                             <div class="row ">
                                 <div class="col-md-2 d-flex p-0">
-                                    <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+                                    <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
                                     <img id="img-greetings" src="${song.album.cover_xl}" class="img-fluid rounded-start" alt="${song.title}">
                                     </a>
                                 </div>
                                 <div class="col-md-10 d-flex align-items-center">
                                     <div class="card-body ">
-                                        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+                                        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
                                         <h5 class="card-title text-white fs-6">${song.title}</h5>
                                         </a>
                                     </div>
@@ -129,9 +129,9 @@ function displayResults(result, nodeHtml) {
         const song = songs[i]
 
         nodeHtml.innerHTML += /*html*/`
-    <div id="${song.id}" class="col-md-2">
+    <div id="${song.artist.id}" class="col-md-2">
     <div id="card" class="card-results position-relative rounded p-3">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
             <img src="${song.album.cover_xl}" class="card-img-top rounded-circle" alt="${song.title}">
         </a>
             <div id="play-btn-container" class="position-absolute invisible">
@@ -140,7 +140,7 @@ function displayResults(result, nodeHtml) {
            
         </div>
         <div class="card-body p-0 mt-2">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
             <p class="card-text fw-semibold text-white">${song.album.title}</p>
         </a>
         <p class="card-text fw-normal text-white-50">Artist</p>
