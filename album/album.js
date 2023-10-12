@@ -1,15 +1,25 @@
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
 const ArtisInfo = document.querySelector(".ArtistInfo")
 const ArtistSongs = document.querySelector(".Top10Songs")
+const main = document.querySelector("#main")
 let number
 let check 
 
+// async function GetAlbum() {
+//         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
+//         const result = await response.json()
+//         return result.data
+       
+//     } 
 
- async function GetSongFromRandomArtist() {
+ async function GetSongFromRandomArtist() { // funzione che fetcha randomicamente un artista 
     try {
         document.querySelector(".waveform").classList.remove("d-none")
-        do {
-        await sleep(1500)
-        randomnumber()
+        do { //ciclo do while che cicla fino a quando non trova un array pieno
+        await sleep(1800) //funzione che fa fetchare ogni 1.5sec per non intasare il server
+        randomnumber() // funzione per avere un numero random 
         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
         const result = await response.json()
         check = result.data 
@@ -28,13 +38,13 @@ let check
 
  window.onload = async function () {
     
-     const SongData = await GetSongFromRandomArtist()
+     const RandomArtistData = await GetSongFromRandomArtist()
      
-      DisplaySongFromRandomArtist(SongData)
+      DisplaySongFromRandomArtist(RandomArtistData)
    
  }
 
-  function DisplaySongFromRandomArtist(SongData) {
+  function DisplaySongFromRandomArtist(SongData) { //display random artist nella sidebar 
 
      ArtisInfo.innerHTML = /*html*/ 
      `
@@ -62,8 +72,8 @@ let check
     ).join("")
   }
 
-function randomnumber() {
-    number = Math.floor(Math.random() * 50000) + 1
+function randomnumber() { //funzione per numero random
+    number = Math.floor(Math.random() * 5000) + 1
 }
 
-const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds))
+const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec
