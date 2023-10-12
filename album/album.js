@@ -152,7 +152,8 @@ try {
                             <div class="me-4 pe-3">
                                 <p class="m-0 text-grey">${song.duration}</p>
                             </div>
-                        </div>
+                            
+            </div>
 
 
             `
