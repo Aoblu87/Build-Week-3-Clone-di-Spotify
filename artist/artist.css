@@ -172,7 +172,10 @@
   flex: 0 0 auto;
   width: 22%;
   padding-right: 0;
-  height: 100vh;
+  height: 100%;
+  top: 0;
+  position: sticky;
+
   }
 
 .bg-grey { /*X SIDERBAR */
@@ -363,8 +366,15 @@ h5 {
   color: white;
   z-index: 200000;
   position: relative;
-  bottom: 230px;
-  
+  bottom: 275px;  
+}
+
+#frecce {
+  color: white;
+  z-index: 200000;
+  position: relative;
+  bottom: 235px; 
+  left: 50px;
 }
 
 /* LOADER */
@@ -479,3 +489,28 @@ h5 {
       align-items: center;
     }
    }
+
+   /* FOOTER */
+#social-icons button {
+  background-color: #727272;
+  filter: brightness(0.30);
+}
+
+#social-icons button>.bi {
+  color: white;
+
+}
+
+#social-icons button:hover {
+  background-color: #727272;
+  filter: brightness(1.50);
+
+}
+#footer-list >li{
+  font-size: 10pt;
+}
+#copyrights p{
+  font-size: 10pt;
+}
+
+
