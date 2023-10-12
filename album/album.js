@@ -1,13 +1,14 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const ArtisInfo = document.querySelector(".ArtistInfo")
-const ArtistSongs = document.querySelector(".Top10Songs")
-const main = document.querySelector("#main")
-let number
-let check 
+const ArtisInfo = document.querySelector(".ArtistInfo") // X SIDEBAR
+const ArtistSongs = document.querySelector(".Top10Songs")// X SIDEBAR
 
- async function GetAlbum() {
+const main = document.querySelector("#main")
+let number // X SIDEBAR
+let check  // X SIDEBAR
+
+ async function GetAlbum() { 
          const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
          const result = await response.json()
          console.log(result)
@@ -15,7 +16,7 @@ let check
        
     } 
 
- async function GetSongFromRandomArtist() { // funzione che fetcha randomicamente un artista 
+ async function GetSongFromRandomArtist() {  // X SIDEBAR // funzione che fetcha randomicamente un artista 
 try {
     document.querySelector(".dot-pulse").classList.remove("d-none")
     do { //ciclo do while che cicla fino a quando non trova un array pieno
@@ -40,17 +41,17 @@ try {
  window.onload = async function () {
     
         
-        const AlbumData = await GetAlbum()
+        const AlbumData = await GetAlbum() // X SIDEBAR
         
         DisplayAlbum(AlbumData)
         DisplayTableSong(AlbumData)
 
-        const RandomArtistData = await  GetSongFromRandomArtist()
-        DisplaySongFromRandomArtist(RandomArtistData)
+        const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
+        DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
    
  }
 
- function DisplayAlbum(AlbumData) {
+ function DisplayAlbum(AlbumData) { 
     main.innerHTML = /*html*/
     `
     <div class="scroollbar-main" style="    margin-bottom: 97px;
@@ -60,8 +61,41 @@ try {
     top: 0;
     overflow-y: auto;
     height: 100vh;
-    width: -webkit-fill-available;"
-            class="mt-2">
+    width: -webkit-fill-available;" class="mt-2">
+           
+    <div id="top-icon" class="row p-2 sticky-top m-0">
+    <div id="nav-icon" class="col d-flex align-items-center ">
+
+      <button 
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+        <i class="bi bi-arrow-left"></i></i></button>
+      <button 
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
+        <i class="bi bi-arrow-right"></i></button>
+        <div class="d-flex justify-content-center align-items-center me-4 text-light"
+                        style="background-color: green; padding-inline: 10px;border-radius: 50px; font-size: 35px;">
+                        <i class="bi bi-play-fill"></i>
+        </div>
+        
+        
+    </div>
+
+    <div id="user-icon" class="col d-flex align-items-center justify-content-end">
+      <button
+        class="d-flex justify-content-center align-items-center btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-pill w-25 h-75 m-0 p-0 me-2">
+        <i class="bi bi-arrow-down-circle fs-5 me-1"></i>Install App</button>
+      <button
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+        <i class="bi bi-bell"></i></button>
+      <button
+        class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-5">
+        <i class="bi bi-person"></i></i></button>
+    </div>
+
+
+
+
+  </div>
             <div class="title-image-info" style="
             height: 40vh;
             display: flex;
@@ -80,8 +114,9 @@ try {
                         <div class="d-flex justify-content-start align-items-center">
                             <img src="${AlbumData.contributors[0].picture}"
                                 alt="" style="width: 25px; height: 25px; border-radius: 25px;">
-                            <p class="m-0" style="font-size: 14px;"><span class="fw-bolder"><a class="text-decoration-none text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">${AlbumData.artist.name}</a></span>•${AlbumData.nb_tracks}•${AlbumData.duration}
-                                minuti</p>
+                            <p class="m-0" style="font-size: 14px;"><span class="fw-bolder">
+                            <a class="text-decoration-none text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
+                            ${AlbumData.artist.name}</a></span> • ${AlbumData.nb_tracks} canzoni • ${formatTime(AlbumData.duration)} minuti</p>
                                 
                         </div>
 
@@ -148,9 +183,10 @@ try {
                                 </div>
                             </div>
                             <div class="me-4 pe-3">
-                                <p class="m-0 text-grey">${song.duration}</p>
+                                <p class="m-0 text-grey">${formatTime(song.duration)}</p>
                             </div>
-                        </div>
+                            
+            </div>
 
 
             `
@@ -175,7 +211,7 @@ try {
                                 </div>
                             </div>
                             <div class="me-4 pe-3">
-                                <p class="m-0 text-grey">${song.duration}</p>
+                                <p class="m-0 text-grey">${formatTime(song.duration)}</p>
                             </div>
                         </div>
             `
@@ -184,7 +220,7 @@ try {
   
  }
 
-  async function DisplaySongFromRandomArtist(RandomArtistData) { //display random artist nella sidebar 
+  async function DisplaySongFromRandomArtist(RandomArtistData) { //display random artist nella sidebar  // X SIDEBAR
 
         
      ArtisInfo.innerHTML = /*html*/ 
@@ -213,8 +249,18 @@ try {
     ).join("")
   }
 
-function randomnumber() { //funzione per numero random
+function randomnumber() { //funzione per numero random // X SIDEBAR 
     number = Math.floor(Math.random() * 5000) + 1
 }
 
-const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec
+const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec // X SIDEBAR
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+
+    const formattedMinutes = String(minutes).padStart(2, '0'); // Aggiunge uno zero iniziale se necessario
+    const formattedSeconds = String(seconds).padStart(2, '0'); // Aggiunge uno zero iniziale se necessario
+
+    return `${formattedMinutes}:${formattedSeconds}`;
+}

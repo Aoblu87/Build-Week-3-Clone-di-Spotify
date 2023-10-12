@@ -2,11 +2,9 @@
 let sectionOne = document.querySelector('#greetings')
 let sectionTwo = document.querySelector('#made-for-you-section')
 let sectionThree = document.querySelector('#recently-played-section')
-let carouselSection = document.querySelector('#carousel-mobile')
 
-let allFavorites = []
+let allFavorites =[]
 
-let carouselResult=[]
 // Tutti i risultati
 let allResults = []
 
@@ -24,42 +22,21 @@ window.onload = async function () {
     makeFetch("hisaishi", sectionTwo)
     makeFetch("japanese", sectionThree)
     favorites("wagakkiband", sectionOne)
-    carousel("hisaishi", carouselSection)
-
+    
+    
 }
 
-async function favorites(artist, nodeHtml) {
+async function favorites(artist, nodeHtml){
     try {
         allFavorites = await getResults(artist)
 
         // Varibili per identificare nodi
         sectionOne = document.querySelector('#greetings')
-
+      
 
 
         // Mostro tutti i prodotti nel DOM
         displayFavorites(allFavorites, nodeHtml)
-
-    } catch (error) {
-        console.log(error)
-    }
-
-}
-
-// funzione per carousel
-
-async function carousel(artist, nodeHtml) {
-    try {
-        carouselResult = await getResults(artist)
-
-        // Varibili per identificare nodi
-        carousel = document.querySelector('#carousel-mobile')
-
-
-
-
-        // Mostro tutti i prodotti nel DOM
-        displayCarousel(carouselResult, nodeHtml)
 
     } catch (error) {
         console.log(error)
@@ -76,8 +53,6 @@ async function makeFetch(artist, nodeHtml) {
         // Varibili per identificare nodi
         sectionTwo = document.querySelector('#made-for-you-section')
         sectionThree = document.querySelector('#recently-played-section')
-        carousel = document.querySelector('#carousel-mobile')
-
 
 
         // Mostro tutti i prodotti nel DOM
@@ -107,42 +82,18 @@ async function getResults(query) {
 }
 
 
-// funzione che mostra carosselo
-
-function displayCarousel(result, nodeHtml) {
-    const songs = result.data
-
-    for (let i = 0; i < 6; i++) {
-        const song = songs[i]
-
-        nodeHtml.innerHTML += /*html*/`
-                        <div id="${song.artist.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
-                            <div class="row  ">
-                                <div class="col-6 col-md-2 d-flex p-0">
-                                    <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
-                                    <img id="img-greetings" src="${song.album.cover_xl}" class="img-fluid rounded-start" alt="${song.title}">
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                                `
-
-    }
-}
-
 // Funzione che mostra risultati delle sezioni 1
 
-function displayFavorites(result, nodeHtml) {
+function displayFavorites(result, nodeHtml){
     const songs = result.data
 
     for (let i = 0; i < 6; i++) {
         const song = songs[i]
-
+console.log(song)
         nodeHtml.innerHTML += /*html*/`
                         <div id="${song.artist.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
-                            <div class="row  ">
-                                <div class="col-5 col-md-2 d-flex p-0">
+                            <div class="row ">
+                                <div class="col-md-2 d-flex p-0">
                                     <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
                                     <img id="img-greetings" src="${song.album.cover_xl}" class="img-fluid rounded-start" alt="${song.title}">
                                     </a>
@@ -157,13 +108,13 @@ function displayFavorites(result, nodeHtml) {
                             </div>
                         </div>
                                 `
+                        
+                            }
+                        }
+                                    
 
-    }
-}
 
-
-
-
+                        
 
 
 
@@ -174,13 +125,13 @@ function displayResults(result, nodeHtml) {
 
     const songs = result.data
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
         const song = songs[i]
 
         nodeHtml.innerHTML += /*html*/`
-    <div id="${song.id}" class="col-5 col-md-2">
+    <div id="${song.artist.id}" class="col-md-2">
     <div id="card" class="card-results position-relative rounded p-3">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
             <img src="${song.album.cover_xl}" class="card-img-top rounded-circle" alt="${song.title}">
         </a>
             <div id="play-btn-container" class="position-absolute invisible">
@@ -189,7 +140,7 @@ function displayResults(result, nodeHtml) {
            
         </div>
         <div class="card-body p-0 mt-2">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.id}">
+        <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
             <p class="card-text fw-semibold text-white">${song.album.title}</p>
         </a>
         <p class="card-text fw-normal text-white-50">Artist</p>
@@ -202,16 +153,9 @@ function displayResults(result, nodeHtml) {
 
 }
 
-
-// funzione che controlla larghezza viewport
-
-function viewPortWidth() {
-
-}
-
 const today = new Date();
 const hours = today.getUTCHours();
-console.log(hours)
+console.log (hours)
 
 
 //   <p class="card-text">${timeStampFromDuration(result.duration)}</p>

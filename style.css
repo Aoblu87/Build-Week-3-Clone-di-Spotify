@@ -1,50 +1,20 @@
-:root{
-    --color-green: #1DB954;
-    --color-black: #191414;
-    --color-white: #ffffff;
-    --color-grey: #242424;
-}/* body {
+body {
     background-color: black;
-} */
-/* html {
-    --scrollbarBG: transparent;
-    --thumbBG:#889293;
-  }
-  body::-webkit-scrollbar {
-    width: 11px;
-  }
-  body {
-    scrollbar-width: thin;
-    scrollbar-color: transparent;
-  }
-  body::-webkit-scrollbar-track {
-    background: var(--scrollbarBG);
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG) ;
-    border-radius: 6px;
-    border: 3px solid var(--scrollbarBG);
-  } */
+}
+
 /* MAIN */
 
 main {
 
-    /* background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212); */
-    background-image: linear-gradient(
-        180deg,
-        hsl(0deg 0% 24%) 0%,
-        hsl(344deg 0% 19%) 2%,
-        hsl(344deg 0% 15%) 10%,
-        hsl(344deg 0% 11%) 31%,
-        hsl(0deg 0% 7%) 100%
-      );
+    background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212);
+
 }
 
 /* Top del main */
 
 #top-icon {
     height: 4rem;
-    /* background-color: #542636; */
+    background-color: #542636;
 
 }
 
@@ -54,7 +24,6 @@ main {
 } */
 #nav-icon button {
     width: 2.5rem;
-
 }
 
 #user-icon button:nth-child(2) {
@@ -64,10 +33,6 @@ main {
 
 #user-icon button:nth-child(3) {
     width: 2rem;
-}
-
-#top-icon>div> button{
-    background-color: #081213;
 }
 
 /* 
@@ -80,32 +45,32 @@ main {
 
 /* GREETINGS Section */
 
-/* #greetings{
+#greetings{
     width: 100%;
-} */
+}
 
 
 #greetings >div{
-    /* height: 5.5rem;
-    width: 31.5rem; */
-    background-color: rgba(42, 43, 43, 1);
+    height: 5.5rem;
+    width: 31.5rem;
+    background-color: rgba(42, 43, 43, 0.4);
 }
-/* #greetings >div > .row{
+#greetings >div > .row{
     height: 5.5rem;
 }
 #img-greetings{
     height: 5.5rem;
-} */
+}
 
 
 /* CARDS */
 
-/* .results-container>div {
+.results-container>div {
     width: 14%;
-} */
+}
 
 #play-btn-container {
-    inset: 146px 0 0 136px;
+    inset: 108px 0 0 110px;
 }
 
 #play-btn-container button {
@@ -119,7 +84,7 @@ main {
     background-color: rgb(21, 20, 20);
 }
 .card-results{
-    height: 100%;
+    height: 18rem;
 }
 
 
@@ -135,20 +100,21 @@ main {
 
 
 /* FOOTER */
- #social-icons button {
-    background-color:#292929;
-    
-}
 #social-icons button {
-    width: 2.5rem;
-    height: 2.5rem;
+    background-color: #727272;
+    filter: brightness(0.30);
+}
+
+#social-icons button>.bi {
+    color: white;
+
 }
 
 #social-icons button:hover {
     background-color: #727272;
-    filter: brightness(1);
+    filter: brightness(1.50);
 
-}  
+}
  #footer-list >li{
     font-size: 10pt;
  }
