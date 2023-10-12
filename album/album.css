@@ -152,55 +152,55 @@
   }
 }
 
-.waveform {
-  --uib-size: 40px;
-  --uib-speed: 1s;
-  --uib-color: black;
-  --uib-line-weight: 3.5px;
 
+
+.dot-pulse {
+  --uib-size: 40px;
+  --uib-speed: 1.3s;
+  --uib-color: white;
+  scale: 0.5;
+
+  position: relative;
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   width: var(--uib-size);
-  height: calc(var(--uib-size) * 0.9);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  height: calc(var(--uib-size) * 0.27);
 }
 
-.waveform__bar {
-  width: var(--uib-line-weight);
-  height: 100%;
+.dot-pulse__dot,
+.dot-pulse::before,
+.dot-pulse::after {
+  content: '';
+  display: block;
+  height: calc(var(--uib-size) * 0.18);
+  width: calc(var(--uib-size) * 0.18);
+  border-radius: 50%;
   background-color: var(--uib-color);
+  transform: scale(0);
 }
 
-.waveform__bar:nth-child(1) {
-  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.45) infinite;
+.dot-pulse::before {
+  animation: pulse var(--uib-speed) ease-in-out infinite;
 }
 
-.waveform__bar:nth-child(2) {
-  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.3) infinite;
+.dot-pulse__dot {
+  animation: pulse var(--uib-speed) ease-in-out
+    calc(var(--uib-speed) * 0.125) infinite both;
 }
 
-.waveform__bar:nth-child(3) {
-  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.15) infinite;
+.dot-pulse::after {
+  animation: pulse var(--uib-speed) ease-in-out
+    calc(var(--uib-speed) * 0.25) infinite;
 }
 
-.waveform__bar:nth-child(4) {
-  animation: grow var(--uib-speed) ease-in-out infinite;
-}
-
-@keyframes grow {
-
+@keyframes pulse {
   0%,
   100% {
-    transform: scaleY(0.3);
+    transform: scale(0);
   }
 
   50% {
-    transform: scaleY(1);
+    transform: scale(1.5);
   }
 }

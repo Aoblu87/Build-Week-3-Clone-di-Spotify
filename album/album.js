@@ -17,7 +17,7 @@ let check
 
  async function GetSongFromRandomArtist() { // funzione che fetcha randomicamente un artista 
 try {
-    document.querySelector(".waveform").classList.remove("d-none")
+    document.querySelector(".dot-pulse").classList.remove("d-none")
     do { //ciclo do while che cicla fino a quando non trova un array pieno
     await sleep(1800) //funzione che fa fetchare ogni 1.5sec per non intasare il server
     randomnumber() // funzione per avere un numero random 
@@ -32,7 +32,7 @@ try {
     ArtisInfo.innerHTML = `"oh oh qualcosa non va`
   }
   finally {
-    document.querySelector(".waveform").classList.add("d-none");
+    document.querySelector(".dot-pulse").classList.add("d-none");
   }
         
 } 
@@ -60,7 +60,7 @@ try {
     top: 0;
     overflow-y: auto;
     height: 100vh;
-    width: -webkit-fill-available;}
+    width: -webkit-fill-available;"
             class="mt-2">
             <div class="title-image-info" style="
             height: 40vh;
@@ -89,7 +89,7 @@ try {
                 </div>
             </div>
             <div class="mt-2 pt-4" style="
-            background: linear-gradient(180deg, #00000040, black); padding-bottom: 100px
+            background: linear-gradient(180deg, #00000040, black); padding-bottom: 110px
         ">
                 <div class="d-flex justify-content-start align-items-center px-4 mb-5 text-grey" style="
             font-size: 35px;
@@ -190,7 +190,7 @@ try {
      ArtisInfo.innerHTML = /*html*/ 
      `
     
-     <h6 class="mb-3">Artista del Giorno:</h6>
+     
      <h5 class="mb-3"><a class="text-decoration-none text-light" href="/artist/artist.html?id=${RandomArtistData[0].artist.id}">${RandomArtistData[0].artist.name}</h5>
      <img src="${RandomArtistData[0].contributors[0].picture}" alt="" class="mb-3">
      <p>Top 10:</p>
