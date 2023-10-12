@@ -218,7 +218,7 @@ let number // X SIDEBAR
 let check  // X SIDEBAR
 
  async function GetAlbum() { 
-         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/754535`)
+         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
          const result = await response.json()
          console.log(result)
          return result
