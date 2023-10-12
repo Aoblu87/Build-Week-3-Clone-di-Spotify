@@ -9,6 +9,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="global/global.css">
 </head>
 
 <body>
@@ -16,130 +17,82 @@
     <div class="row">
 
       <!-- SIDEBAR -->
-      <div class="col bg-black" id="fixed-sidebar-sx">
-        <div class="sticky-top ps-3 py-2 pe-3">
+      <div class="d-none d-md-block" id="fixed-sidebar-sx">
+        <div class="sidebar-top pt-2 mx-2">
           <div class="nav flex-column">
-            <p class="text-light pb-2 fw-bolder m-0 fs-3 text"> ...</p>
-            <a href="index.html" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
-                class="bi bi-house-door-fill fs-5 text me-2"></i> <span class="fw-bolder">Home</span></a>
-            <a href="search/search.html" class="text-decoration-none text-grey py-2 d-flex align-items-center"><i
-                class="bi bi-search fs-5 text me-2"></i> <span class="fw-bolder">Cerca</span></a>
-            <a href="#_" class="text-decoration-none text-grey pt-2 pb-3 d-flex align-items-center"><i
-                class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua Libreria</span></a>
-            <a href="#_" class="text-decoration-none text-grey d-flex pt-3 pb-2 d-flex align-items-center">
-              <div class="me-3 bg-body-tertiary img-playlist-sidebar"><i class="bi bi-plus-lg text-dark"></i>
-              </div><span class="fw-bolder">Crea PLaylist</span>
-            </a>
-            <a href="#_" class="text-decoration-none text-grey py-2 d-flex align-items-center"><img
-                src="../assets/branichetipiacciono.png" alt="" class="me-3"><span class="fw-bolder">Brani che ti
-                piacciono</span></a>
-            <a href="#_" class="text-decoration-none text-grey d-flex align-items-center py-2">
-              <div class="me-3 img-episodi-sidebar"><i class="bi bi-bookmark-fill"></i></div><span class="fw-bolder">I
-                tuoi
-                Episodi</span>
-            </a>
+            <div class="bg-grey px-3" style="border-radius: 15px;">
+              <div class="text-decoration-none py-2"><a class="text-grey text-decoration-none d-flex align-items-center"
+                  href="../index.html"><i class="bi bi-house-door fs-5 text me-2"></i> <span
+                    class="fw-bolder">Home</span></a>
+              </div>
+              <div class="text-decoration-none py-2"><a class="text-grey text-decoration-none d-flex align-items-center"
+                  href="../search/search.html"><i class="bi bi-search fs-5 text me-2"></i> <span
+                    class="fw-bolder">Cerca</span></a>
+              </div>
+
+            </div>
+            <div class="bg-grey px-3" style="border-top: 5px solid black;
+                border-radius: 15px 15px 0 0;">
+              <div class="d-flex justify-content-between align-items-center">
+
+                <div class="text-decoration-none py-2"><a
+                    class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
+                      class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua
+                      Libreria</span></a>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center">
+                  <i class="bi bi-plus-lg text-light fs-5"></i>
+                  <i class="bi bi-arrow-right-short text-light fs-4"></i>
+                </div>
+
+              </div>
+              <div class="d-flex flex-wrap mt-3 pb-2 justify-content-left" style="font-size: 0.8rem;">
+                <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
+                  <a href="#_" class="text-decoration-none fw-medium text-light ">
+                    Playlist
+                  </a>
+                </div>
+                <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
+                  <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                    Podcast e show
+                  </a>
+                </div>
+                <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
+                  <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                    Album
+                  </a>
+                </div>
+                <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
+                  <a href="#_" class="text-decoration-none fw-medium text-light">
+
+                    Artisti
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="sidebar-scroll p-3">
-          <div class="nav flex-column ">
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>
-            <p>TITOLI VARI</p>v
+        <div class="sidebar-scroll mx-2 bg-grey" style="    width: 17.5%;
+        ">
+          <div class="nav flex-column p-3 ">
+            <div class="waveform d-none">
+              <div class="waveform__bar"></div>
+              <div class="waveform__bar"></div>
+              <div class="waveform__bar"></div>
+              <div class="waveform__bar"></div>
+            </div>
+            <div class="ArtistInfo text-grey">
 
+            </div>
+            <div class="Top10Songs">
+
+            </div>
 
           </div>
+
         </div>
       </div>
       <!-- MAIN -->
@@ -289,17 +242,17 @@
             <div class="col-md-11">
 
               <ul id="footer-list" class="list-group list-group-horizontal list-unstyled">
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Legal</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy Center</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy Policy</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Cokkie Settings</a></li>
-                <li ><a href="#"
-                    class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">About Ads</a></li>
-                <li ><a href="#"
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Legal</a>
+                </li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy
+                    Center</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Privacy
+                    Policy</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Cokkie
+                    Settings</a></li>
+                <li><a href="#" class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">About
+                    Ads</a></li>
+                <li><a href="#"
                     class="p-0 text-white-50 link-underline-light link-underline-opacity-0 me-3">Accessibility</a></li>
 
 
@@ -314,7 +267,7 @@
 
       </main>
     </div>
-    
+
     <section id="player" class="fixed-bottom">
       <div class="conteiner-fluid">
         <div class="row">
@@ -381,6 +334,7 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="script.js"></script>
+  <script src="global/global.js"></script>
 </body>
 
 </html>
