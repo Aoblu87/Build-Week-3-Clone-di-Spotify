@@ -95,9 +95,9 @@ main {
 
 /* CARDS */
 
-.results-container>div {
+/* .results-container>div {
     width: 14%;
-}
+} */
 
 #play-btn-container {
     inset: 108px 0 0 110px;
@@ -114,7 +114,7 @@ main {
     background-color: rgb(21, 20, 20);
 }
 .card-results{
-    height: 18rem;
+    height: 100%;
 }
 
 

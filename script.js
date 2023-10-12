@@ -125,7 +125,7 @@ function displayResults(result, nodeHtml) {
 
     const songs = result.data
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
         const song = songs[i]
 
         nodeHtml.innerHTML += /*html*/`
