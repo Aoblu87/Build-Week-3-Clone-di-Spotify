@@ -16,15 +16,19 @@ function timeStampFromDuration(duration) {
         "0"
     )}`
 }
-
-
-window.onload = async function () {
+window.addEventListener('load', ()=>{
     makeFetch("hisaishi", sectionTwo)
     makeFetch("japanese", sectionThree)
     favorites("wagakkiband", sectionOne)
+})
+
+// window.onload = async function () {
+//     makeFetch("hisaishi", sectionTwo)
+//     makeFetch("japanese", sectionThree)
+//     favorites("wagakkiband", sectionOne)
     
     
-}
+// }
 
 async function favorites(artist, nodeHtml){
     try {
