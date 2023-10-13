@@ -225,7 +225,7 @@ async function playAudio(id) {
     const response = await fetch("https://striveschool-api.herokuapp.com/api/deezer/track/" + id);
     const data = await response.json();
 
-    const { title, album, artist, duration } = data;
+    const { title, album, artist } = data;
 
     /* RECUPERO DATI NECESSARI */
     const target = document.querySelector(`#_${id}`);
@@ -259,6 +259,7 @@ async function playAudio(id) {
 
         /* SE NON E' LA STESSA FERMA LA CANZONE DI PRIMA */
         previousAudio.pause()
+        previousAudio.currentTime = 0;
         previousIcon.classList.remove('active')
         previousIcon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
 
