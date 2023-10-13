@@ -537,4 +537,6 @@ h5 {
   font-size: 10pt;
 }
 
-
+.fixed-bottom{
+  bottom: 20px !important;
+}
