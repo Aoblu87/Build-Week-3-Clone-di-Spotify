@@ -41,6 +41,7 @@ async function displayResults(results) {
         displayHome();
 
     } else {
+        stopAll()
         const data = await getData(results)
         row.innerHTML = data.map(({ album, artist, title, duration, preview, id }) => /*html*/`
     
@@ -242,7 +243,7 @@ async function playAudio(id) {
         const previousAudio = previousPlaying.querySelector('audio');
 
         /* SE E' LA STESSA CANZONE FERMA L'AUDIO */
-        if (previousAudio === currentAudio) {
+        if (previousAudio === currentAudio && !currentAudio.pause()){
             previousAudio.pause();
             previousIcon.classList.remove('active')
             previousIcon.innerHTML = '<i class="bi bi-play-fill text-white"></i>';
@@ -283,7 +284,7 @@ async function playAudio(id) {
     PlayerButton.innerHTML = '<i class="bi bi-pause-fill fs-4  text-white"></i>';
 
     if (progress.offsetWidth == 0) {
-        progress.style.transition = `width 30s linear`
+        progress.style.transition = `width ${currentAudio.duration}s linear`
         progress.style.width = '100%';
     }
 
@@ -316,7 +317,8 @@ function stopAll() {
 
     PlayerButton.innerHTML = '<i class="bi bi-play-fill  fs-4 text-white"></i>';
     progress.style.transition = `width 0s linear`
-    progress.style.width = '0%';
+    progress.style.width = '0%'; 
+    
 }
 
 window.onload = async () => {
