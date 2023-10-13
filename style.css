@@ -131,6 +131,9 @@ main {
 
 
 /* PLAYER */
+.fixed-bottom{
+  bottom: 25px !important;
+}
 #player i {
     color: white;
     cursor: pointer;
