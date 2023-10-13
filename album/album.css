@@ -89,6 +89,13 @@ font-weight: 700;
   margin-bottom: 22px;
 }
 
+.Album-Mobile {
+  
+  display: flex;
+  align-items: center;
+  
+}
+
 @media only screen and (max-width: 992px) {
   #progress {
     width: 28vw;      
@@ -102,6 +109,54 @@ font-weight: 700;
 @media only screen and (max-width: 768px) {
 #progress {
   width: 12vw;    
+}
+}
+/*MOBILE ALBUM MAIN*/
+
+@media only screen and (max-width: 992px) {
+ .scroollbar-main {
+  border-radius: 0px !important;
+
+}
+.Album-Mobile {
+  margin: 0 !important;
+  width: 100vw !important;
+  display: block !important;
+}
+.Album-Mobile div:first-of-type  {
+  text-align: center !important;
+}
+ .album-cover{
+  width: 200px !important;
+  height: 200px !important;
+  margin-bottom: 15px !important;
+} 
+.Album-Mobile p {
+  font-size: 15px !important;
+}
+.Album-Mobile h1 {
+  font-size: 1rem !important;
+}
+.count-mobile {
+  display: none;
+}
+.text-light >p {
+  display: none;
+}
+.background-mobile {
+  background: none !important;
+}
+.bi-skip-end-fill {
+  display: none;
+}
+.button-top-main {
+  width: 100vw !important;
+}
+.button-top-main p {
+  font-size: 15px !important;
+}
+.button-top-main div:first-of-type {
+  padding-inline: 7px !important;
 }
 }
 

@@ -51,14 +51,14 @@ const main = document.querySelector("#main")
       <button 
         class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
         <i class="bi bi-arrow-right"></i></button>
-        <div class="button-top-main opacity-0 d-flex">
+        <div class="button-top-main opacity-0 d-flex align-items-center">
         
         <div class="d-flex justify-content-center align-items-center me-4 text-light"
                         style="background-color: green; padding-inline: 10px;border-radius: 50px; font-size: 27px;">
                         <i class="bi bi-play-fill"></i>
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            <p class="m-0 text-light fw-bolder" style="font-size: 30px;">${AlbumData.title}</p>
+            <p class="m-0 text-light fw-bolder" style="font-size: 20px;">${AlbumData.title}</p>
         </div>
         </div>
         
@@ -84,11 +84,11 @@ const main = document.querySelector("#main")
             height: 40vh;
             display: flex;
             align-items: flex-end;">
-                <div class="d-flex align-items-end mb-3" style="margin-left: 1rem;">
+                <div class=" mb-3 Album-Mobile" style="margin-left: 1rem;">
 
 
                     <div>
-                        <img src="${AlbumData.cover}"
+                        <img src="${AlbumData.cover}" class="album-cover"
                             alt="" style="width: 240px; height: 240px; -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.46); 
                             box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.46);">
                     </div>
@@ -107,7 +107,7 @@ const main = document.querySelector("#main")
                     </div>
                 </div>
             </div>
-            <div class="mt-2 pt-4" style="
+            <div class="mt-2 pt-4 background-mobile" style="
             background: linear-gradient(180deg, #00000040, black); padding-bottom: 110px
         ">
                 <div class="d-flex justify-content-start align-items-center px-4 mb-5 text-grey" style="
@@ -153,7 +153,7 @@ const main = document.querySelector("#main")
                     margin-top: 1.5rem;
                 ">
                             <div class="d-flex align-items-center ps-1">
-                                <div class="text-grey" style="
+                                <div class="text-grey count-mobile" style="
                             font-size: 20px;
                         ">
                                     <p class="m-0">${i + 1}</p>
@@ -180,8 +180,8 @@ const main = document.querySelector("#main")
             <div class="d-flex justify-content-between align-items-center text-light" style="
                     margin-top: 1.5rem;
                 ">
-                            <div class="d-flex align-items-center ps-3">
-                                <div class="text-grey" style="
+                            <div class="d-flex align-items-center ps-3 ">
+                                <div class="text-grey count-mobile" style="
                             font-size: 20px;
                         ">
                                     <p class="m-0">${i + 1}</p>
