@@ -376,8 +376,8 @@ h5 {
 #frecce {
   color: white;
   z-index: 200000;
-  position: relative;
-  bottom: 297px; 
+  position: absolute;
+  bottom: 266px; 
   left: 19px;
 }
 

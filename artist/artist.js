@@ -54,7 +54,7 @@ async function loadData(id) {
                           <p class="artist-name">${data.name}</p>
                           <p class="ascoltatori-mensili">${data.nb_fan} ascoltatori mensili</p>   
                           
-                          <div id="frecce" >
+                          <div id="frecce"  >
                           <button disabled class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-3">
                               <i class="bi bi-arrow-left"></i></i></button>
                           <button disable class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white rounded-circle m-0 p-0 me-2 fs-3">
