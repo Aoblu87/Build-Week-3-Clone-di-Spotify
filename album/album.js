@@ -144,6 +144,7 @@ function DisplayAlbum(AlbumData) {
 }
 
 async function DisplayTableSong(AlbumData) {
+    
 
     AlbumData.tracks.data.forEach((song, i) => {
         if (i >= 9) {
@@ -160,7 +161,7 @@ async function DisplayTableSong(AlbumData) {
                                 <div style="font-size: 15px;margin-left: 1.5rem;">
                                     
                                     <p class="m-0 fw-bolder" style="cursor: pointer;">
-                                        <a class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+                                        <a onclick="DisplayInPlayer('${song.artist.name}' , '${song.title_short}' , '${formatTime(song.duration)}' , '${AlbumData.cover}' )"class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
                                             ${song.title_short}
                                         </a>
                                     </p>
@@ -197,7 +198,7 @@ async function DisplayTableSong(AlbumData) {
                             margin-left: 1.5rem;
                         ">
                                  <p class="m-0 fw-bolder" style="cursor: pointer;">
-                                         <a class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+                                         <a onclick="DisplayInPlayer('${song.artist.name}' , '${song.title_short}' , '${formatTime(song.duration)}' , '${AlbumData.cover}' )" class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
                                               ${song.title_short}
                                          </a>
                                  </p>
@@ -217,7 +218,19 @@ async function DisplayTableSong(AlbumData) {
 }
 
 
+async function DisplayInPlayer(ArtistTitle, SongTitle, Duration, AlbumImage) {
+    const image =  document.querySelector(".img-album-song")
+    const titleSong = document.querySelector(".title .title-player")
+    const  artist = document.querySelector(".title .artist-player")
+    const duration = document.querySelector(".playBar p:last-of-type")
 
+    image.innerHTML = `<img src="${AlbumImage}"
+    alt="" class="img-player rounded shadow me-2">`
+
+    titleSong.innerHTML = `${SongTitle}`
+    artist.innerHTML = `${ArtistTitle}`
+    duration.innerHTML = `${Duration}`
+}
 
 
 function formatTime(time) {
