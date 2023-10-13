@@ -1,12 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const ArtisInfo = document.querySelector(".ArtistInfo") // X SIDEBAR
-const ArtistSongs = document.querySelector(".Top10Songs")// X SIDEBAR
+
 
 const main = document.querySelector("#main")
-let number // X SIDEBAR
-let check  // X SIDEBAR
+
 
  async function GetAlbum() { 
          const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
@@ -16,27 +14,7 @@ let check  // X SIDEBAR
        
     } 
 
- async function GetSongFromRandomArtist() {  // X SIDEBAR // funzione che fetcha randomicamente un artista 
-try {
-    document.querySelector(".dot-pulse").classList.remove("d-none")
-    do { //ciclo do while che cicla fino a quando non trova un array pieno
-    await sleep(1800) //funzione che fa fetchare ogni 1.5sec per non intasare il server
-    randomnumber() // funzione per avere un numero random 
-    const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
-    const result = await response.json()
-    check = result.data 
-    console.log(check)
-    } while ((check.length === 0))
-    return check
-    }
-  catch {
-    ArtisInfo.innerHTML = `"oh oh qualcosa non va`
-  }
-  finally {
-    document.querySelector(".dot-pulse").classList.add("d-none");
-  }
-        
-} 
+ 
 
  window.onload = async function () {
     
@@ -45,12 +23,13 @@ try {
         
         DisplayAlbum(AlbumData)
         DisplayTableSong(AlbumData)
+        document.querySelector(".scroollbar-main").addEventListener('scroll', toggleIcon);
 
         const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
         DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
-   
+        
  }
-
+ 
  function DisplayAlbum(AlbumData) { 
     main.innerHTML = /*html*/
     `
@@ -72,11 +51,16 @@ try {
       <button 
         class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
         <i class="bi bi-arrow-right"></i></button>
+        <div class="button-top-main opacity-0 d-flex align-items-center">
+        
         <div class="d-flex justify-content-center align-items-center me-4 text-light"
-                        style="background-color: green; padding-inline: 10px;border-radius: 50px; font-size: 35px;">
+                        style="background-color: green; padding-inline: 10px;border-radius: 50px; font-size: 27px;">
                         <i class="bi bi-play-fill"></i>
         </div>
-        
+        <div class="d-flex justify-content-center align-items-center">
+            <p class="m-0 text-light fw-bolder" style="font-size: 20px;">${AlbumData.title}</p>
+        </div>
+        </div>
         
     </div>
 
@@ -100,11 +84,11 @@ try {
             height: 40vh;
             display: flex;
             align-items: flex-end;">
-                <div class="d-flex align-items-end mb-3" style="margin-left: 1rem;">
+                <div class=" mb-3 Album-Mobile" style="margin-left: 1rem;">
 
 
                     <div>
-                        <img src="${AlbumData.cover}"
+                        <img src="${AlbumData.cover}" class="album-cover"
                             alt="" style="width: 240px; height: 240px; -webkit-box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.46); 
                             box-shadow: 0px 0px 33px 5px rgba(0,0,0,0.46);">
                     </div>
@@ -123,7 +107,7 @@ try {
                     </div>
                 </div>
             </div>
-            <div class="mt-2 pt-4" style="
+            <div class="mt-2 pt-4 background-mobile" style="
             background: linear-gradient(180deg, #00000040, black); padding-bottom: 110px
         ">
                 <div class="d-flex justify-content-start align-items-center px-4 mb-5 text-grey" style="
@@ -169,7 +153,7 @@ try {
                     margin-top: 1.5rem;
                 ">
                             <div class="d-flex align-items-center ps-1">
-                                <div class="text-grey" style="
+                                <div class="text-grey count-mobile" style="
                             font-size: 20px;
                         ">
                                     <p class="m-0">${i + 1}</p>
@@ -196,8 +180,8 @@ try {
             <div class="d-flex justify-content-between align-items-center text-light" style="
                     margin-top: 1.5rem;
                 ">
-                            <div class="d-flex align-items-center ps-3">
-                                <div class="text-grey" style="
+                            <div class="d-flex align-items-center ps-3 ">
+                                <div class="text-grey count-mobile" style="
                             font-size: 20px;
                         ">
                                     <p class="m-0">${i + 1}</p>
@@ -220,40 +204,9 @@ try {
   
  }
 
-  async function DisplaySongFromRandomArtist(RandomArtistData) { //display random artist nella sidebar  // X SIDEBAR
+ 
 
-        
-     ArtisInfo.innerHTML = /*html*/ 
-     `
-    
-     
-     <h5 class="mb-3"><a class="text-decoration-none text-light" href="/artist/artist.html?id=${RandomArtistData[0].artist.id}">${RandomArtistData[0].artist.name}</h5>
-     <img src="${RandomArtistData[0].contributors[0].picture}" alt="" class="mb-3">
-     <p>Top 10:</p>
-     
-    
-     `
-     ArtistSongs.innerHTML = RandomArtistData.map(Song => /*html*/ 
-      
-              `
-             <div class="d-flex align-items-center my-3 ">
-             <div><img src="${Song.album.cover}" alt=""
-                     style="width: 80px; height: 80px; border-radius: 1 0px;"></div>
-             <div class="ms-2">
-                 <p class="m-0 text-grey">Song: <span class="fw-bolder">${Song.title_short}</span></p>
-                 <p class="m-0 text-grey">Album: <span class="fw-bolder"><a class="text-decoration-none text-light" href="/album/album.html?id=${Song.album.id}">${Song.album.title}</a></span></p>
-                 
-             </div>
-             </div>
-             `
-    ).join("")
-  }
 
-function randomnumber() { //funzione per numero random // X SIDEBAR 
-    number = Math.floor(Math.random() * 5000) + 1
-}
-
-const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, milliseconds)) //funzione per timing 1.5sec // X SIDEBAR
 
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
@@ -264,3 +217,17 @@ function formatTime(time) {
 
     return `${formattedMinutes}:${formattedSeconds}`;
 }
+
+ function toggleIcon() {
+   
+    const tabelsong = document.querySelector('.table-song');
+    const icon = document.querySelector('.button-top-main');
+    console.log(tabelsong.getBoundingClientRect().top)
+    if (tabelsong.getBoundingClientRect().top <= 100) {
+        icon.classList.replace('opacity-0', 'opacity-100');
+    } else {
+        icon.classList.replace('opacity-100', 'opacity-0');
+    }
+}
+
+

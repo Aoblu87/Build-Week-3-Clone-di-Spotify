@@ -1,14 +1,12 @@
-#player i {
-    color: white;
-    cursor: pointer;
-    opacity: 0.7;
-}
-
 .play-green {
     color: #1ED760;
     cursor: pointer;
     opacity: 0.7;
     font-size: 60px;    
+}
+
+.contenitore-foto p {
+  font-weight: 700;
 }
 
 .bi-three-dots {
@@ -22,16 +20,13 @@
   opacity: 1;
 }
 
-.buttons {
-  margin-top: 40px;
-  margin-left: 40px;
-  height: 60px;
+/*PLAYER*/
+#player i {
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
-.buttons i:hover {
-  transform: scale(105%);
-  opacity: 1;
-}
 
 #player i:hover {
    opacity: 1;
@@ -41,9 +36,7 @@
     transform: scale(105%);
 }
 
-.contenitore-foto p {
-  font-weight: 700;
-}
+
 
 #player {
     background-color: black;
@@ -99,6 +92,19 @@
   }
 }
 
+
+.buttons {
+  margin-top: 40px;
+  margin-left: 40px;
+  height: 60px;
+}
+
+.buttons i:hover {
+  transform: scale(105%);
+  opacity: 1;
+}
+
+/*IMMAGINE ARTISTA*/
 .contenitore-foto {
   width: 100%;
   height: 300px;
@@ -375,6 +381,18 @@ h5 {
   left: 50px;
 }
 
+.song-title {
+  cursor: pointer;
+}
+
+.song-title:hover {
+  text-decoration: underline;
+}
+
+.album-cover:hover {
+  transform: scale(105%);
+}
+
 /* LOADER */
 .jelly {
 	--uib-size: 100px;
@@ -485,6 +503,10 @@ h5 {
     #player {
       height: 50px;
       align-items: center;
+    }
+
+    .footer {
+      flex-direction: column;
     }
    }
 
