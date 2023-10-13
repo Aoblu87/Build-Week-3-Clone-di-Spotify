@@ -1,14 +1,12 @@
-#player i {
-    color: white;
-    cursor: pointer;
-    opacity: 0.7;
-}
-
 .play-green {
     color: #1ED760;
     cursor: pointer;
     opacity: 0.7;
     font-size: 60px;    
+}
+
+.contenitore-foto p {
+  font-weight: 700;
 }
 
 .bi-three-dots {
@@ -20,6 +18,12 @@
 .bi-three-dots:hover {
   transform: scale(105%);
   opacity: 1;
+}
+
+#player i {
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .buttons {
@@ -41,9 +45,7 @@
     transform: scale(105%);
 }
 
-.contenitore-foto p {
-  font-weight: 700;
-}
+
 
 #player {
     background-color: black;
@@ -377,6 +379,18 @@ h5 {
   left: 50px;
 }
 
+.song-title {
+  cursor: pointer;
+}
+
+.song-title:hover {
+  text-decoration: underline;
+}
+
+.album-cover:hover {
+  transform: scale(105%);
+}
+
 /* LOADER */
 .jelly {
 	--uib-size: 100px;
@@ -487,6 +501,10 @@ h5 {
     #player {
       height: 50px;
       align-items: center;
+    }
+
+    .footer {
+      flex-direction: column;
     }
    }
 

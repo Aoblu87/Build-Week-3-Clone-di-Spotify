@@ -118,12 +118,13 @@ async function loadData(id) {
             
               <li class="list-group-item">
               <div class="d-flex align-items-center lista">    
-                 <div class="img-album" id="_${song.id}" onclick="playAudio(${song.id})">
+                 <div class="img-album" id="_${song.id}">
+                   <a class="link-offset-2" href="../album/album.html?id=${song.album.id}">
                      <img class="album-cover col-3 mx-5 my-2" src="${song.album.cover_small}" alt="">
-                     <div class="play-button d-none"><i class="bi bi-play-fill play-over position-relative"></div>
-                     </i><audio src="${song.preview}"></audio>
+                   </a>
+                   </i><audio src="${song.preview}"></audio>
                  </div>
-                 <h5 class="song-title list-group-item col-4 my-2">${song.title}</h5>
+                 <h5 class="song-title list-group-item col-4 my-2" onclick="playAudio(${song.id})">${song.title}</h5>
                  <span class="song-rank list-group-item col-2 my-2">${song.rank}</span>
                  <span class="song-duration list-group-item col-2 my-2">${timeStampFromDuration(song.duration)}</span> 
               </div>
@@ -174,7 +175,7 @@ async function playAudio(id) {
 
   const songName = target.querySelector(".song-title")
   const CurrentAudio = target.querySelector(`audio`)
-  const icon = target.querySelector(".play-button")
+  
 
 
   if (CurrentAudio.paused) { /* SE L'AUDIO E' IN PAUSA O NON PARTITO*/
@@ -185,14 +186,12 @@ async function playAudio(id) {
       player.querySelector('.title-player').innerHTML = title
       player.querySelector('.artist-player').innerHTML = artist.name
       player.querySelector('.play-player').innerHTML = '<i class="bi bi-pause-fill text-white fs-2 mx-2"></i>'
-
-      icon.innerHTML = '<i class="bi bi-pause-fill text-white play-over"></i>'
-      icon.classList.toggle("active")
+      
+     
       
 
       CurrentAudio.addEventListener('ended', function () {
-          icon.innerHTML = '<i class="bi bi-play-fill text-white play-over"></i>'
-          icon.classList.remove("active")
+         
           
       });
 
@@ -200,8 +199,7 @@ async function playAudio(id) {
       CurrentAudio.pause();
 
       player.querySelector('.play-player').innerHTML = '<i class="bi bi-play-circle-fill fs-2 mx-2"></i>'
-      icon.innerHTML = '<i class="bi bi-play-fill text-white play-over"></i>'
-      icon.classList.toggle("active")      
+       
   }
 }
 
