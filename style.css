@@ -215,8 +215,12 @@ main {
   @media (max-width: 992px) { 
     #fixed-sidebar-sx, .sidebar-scroll, .song-rank, #progress, #progress2, .icons, .time, .bi-file-play, .bi-mic,
     .bi-border-width, .bi-pc-display, .bi-volume-down, .bi-pip, .bi-shuffle, .bi-arrow-counterclockwise,
-    .bi-arrow-clockwise, .bi-repeat, .artist-player, .bi-skip-start-fill, #user-icon {
+    .bi-arrow-clockwise, .bi-repeat, .artist-player, .bi-skip-start-fill {
       display: none;
+    }
+
+    #user-icon { 
+        display: none !important; 
     }
 
     .player-icons {
@@ -252,6 +256,10 @@ main {
       flex-direction: column;
     }
 
+    footer {
+        flex-direction: column;
+    }
+
     #greetings {
         flex-direction: column;
     }
@@ -262,5 +270,23 @@ main {
 
     #made-for-you-section {
         flex-direction: column;
+    }
+
+    .row {
+        flex-wrap: nowrap;
+    }
+
+    .results-container>div {
+        width: 30%;
+        margin-bottom: 10px;
+        height: 100%;
+    }
+
+    #recently-played-section {
+        flex-direction: column;
+    }
+
+    #user-icon {
+        justify-content: start;
     }
    }
