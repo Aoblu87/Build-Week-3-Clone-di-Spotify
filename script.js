@@ -22,13 +22,11 @@ window.addEventListener('load', ()=>{
     favorites("wagakkiband", sectionOne)
 })
 
-// window.onload = async function () {
-//     makeFetch("hisaishi", sectionTwo)
-//     makeFetch("japanese", sectionThree)
-//     favorites("wagakkiband", sectionOne)
+ window.onload = async function () {
+    const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
+    DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
     
-    
-// }
+}
 
 async function favorites(artist, nodeHtml){
     try {
