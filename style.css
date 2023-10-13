@@ -1,5 +1,6 @@
 body {
     background-color: black;
+  
 }
 
 *{
@@ -12,7 +13,7 @@ body {
 main {
 
     background-image: linear-gradient(to bottom, #542636, #402333, #2d1e2c, #1d1921, #121212);
-
+    width: -webkit-fill-available;
 }
 
 /* Top del main */
@@ -70,9 +71,7 @@ main {
 
 /* CARDS */
 
-.results-container>div {
-    width: 14%;
-}
+
 
 #play-btn-container {
     inset: 108px 0 0 110px;
@@ -269,9 +268,9 @@ main {
         flex-direction: column;
     }
 
-    .row>* {
+    /* .row>* {
         width: auto;
-    }
+    } */
 
     #made-for-you-section {
         flex-direction: column;
@@ -282,7 +281,7 @@ main {
     }
 
     .results-container>div {
-        width: 30%;
+        /* width: 30%; */
         margin-bottom: 10px;
         height: 100%;
     }
