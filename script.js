@@ -17,7 +17,7 @@ function timeStampFromDuration(duration) {
     )}`
 }
 window.addEventListener('load', ()=>{
-    makeFetch("hisaishi", sectionTwo)
+    makeFetch("louwyss", sectionTwo)
     makeFetch("japanese", sectionThree)
     favorites("rock", sectionOne)
 })
