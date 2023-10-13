@@ -208,7 +208,20 @@ async function playAudio(id) {
 const imgPlayer = document.querySelector(".img-player")
 const titlePlayer = document.querySelector(".title-player")
 const artistPlayer = document.querySelector(".artist-player")
+const PlayerButton = document.querySelector('#Player-Button')
 
+function stopAll() {
+  const audio = document.querySelectorAll('audio')
+
+  audio.forEach(audio => {
+      if (!audio.paused) {
+          audio.pause()
+      }
+  });
+
+  PlayerButton.innerHTML = '<i class="bi bi-play-circle-fill fs-2 mx-2"></i>';
+ 
+}
 
 
 
