@@ -164,6 +164,12 @@ font-weight: 700;
 .button-top-main div:first-of-type {
   padding-inline: 7px !important;
 }
+
+.img-player {
+  width: 40px !important;
+  margin-left: 10px !important;
+}
+
 }
 
 .contenitore-foto {
