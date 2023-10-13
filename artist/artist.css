@@ -508,6 +508,10 @@ h5 {
     .footer {
       flex-direction: column;
     }
+
+    #user-icon {
+      display: none;
+    }
    }
 
    /* FOOTER */
