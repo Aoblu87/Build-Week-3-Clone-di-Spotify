@@ -45,12 +45,12 @@ function DisplayAlbum(AlbumData) {
     <div id="top-icon" class="row p-2 sticky-top m-0">
     <div id="nav-icon" class="col d-flex align-items-center ">
 
-      <button 
+      <a href="../index.html"><button 
         class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
-        <i class="bi bi-arrow-left"></i></i></button>
-      <button 
+        <i class="bi bi-arrow-left"></i></i></button></a>
+      <a href="#"><button 
         class="btn btn-transparent border-0 link-offset-2 link-underline link-underline-opacity-0 text-white bg-dark rounded-circle m-0 p-0 me-2 fs-3">
-        <i class="bi bi-arrow-right"></i></button>
+        <i class="bi bi-arrow-right"></i></button></a>
         <div class="button-top-main opacity-0 d-flex align-items-center">
         
         <div class="d-flex justify-content-center align-items-center me-4 text-light"
