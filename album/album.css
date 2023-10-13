@@ -59,7 +59,7 @@ font-weight: 700;
 #progress {
   margin-bottom: 20px;
   color: white;
-  background-color: gray;
+  background-color: grey;
   height: 3px;
   width: 38vw;
   
@@ -72,7 +72,7 @@ font-weight: 700;
 #progress2 {
   
   color: white;
-  background-color: gray;
+  background-color: grey;
   height: 4px;
   width: 7vw;
   border-radius: 10px;
@@ -94,6 +94,12 @@ font-weight: 700;
   display: flex;
   align-items: center;
   
+}
+.button-hover {
+  border: 1px solid transparent ;
+}
+.button-hover:hover {
+  border: 1px solid ;
 }
 
 @media only screen and (max-width: 992px) {

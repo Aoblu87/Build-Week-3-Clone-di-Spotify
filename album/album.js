@@ -6,33 +6,33 @@ const id = params.get("id");
 const main = document.querySelector("#main")
 
 
- async function GetAlbum() { 
+async function GetAlbum() {
     document.querySelector(".dot-pulse").classList.remove("d-none")
-         const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
-         const result = await response.json()
-         console.log(result)
-         return result
-       
-    } 
+    const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
+    const result = await response.json()
+    console.log(result)
+    return result
 
- 
+}
 
- window.onload = async function () {
-    
-        
-        const AlbumData = await GetAlbum() // X SIDEBAR
-        DisplayAlbum(AlbumData)
-        DisplayTableSong(AlbumData)
-        document.querySelector(".scroollbar-main").addEventListener('scroll', toggleIcon);
 
-        const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
-        DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
-        
- }
- 
- function DisplayAlbum(AlbumData) { 
+
+window.onload = async function () {
+
+
+    const AlbumData = await GetAlbum() // X SIDEBAR
+    DisplayAlbum(AlbumData)
+    DisplayTableSong(AlbumData)
+    document.querySelector(".scroollbar-main").addEventListener('scroll', toggleIcon);
+
+    const RandomArtistData = await GetSongFromRandomArtist() // X SIDEBAR DA INSERIRE ALLA FINE 
+    DisplaySongFromRandomArtist(RandomArtistData) // X SIDEBAR DA INSERIRE ALLA FINE 
+
+}
+
+function DisplayAlbum(AlbumData) {
     main.innerHTML = /*html*/
-    `
+        `
     <div class="scroollbar-main" style="    margin-bottom: 97px;
     background: linear-gradient(180deg, #FFEB3B, black), linear-gradient(180deg, #00000040, black);
     border-radius: 15px;
@@ -140,32 +140,38 @@ const main = document.querySelector("#main")
         </div>
     
     `
-  
- }
 
- async function DisplayTableSong(AlbumData) {
+}
+
+async function DisplayTableSong(AlbumData) {
 
     AlbumData.tracks.data.forEach((song, i) => {
-        if(i >= 9){
-            document.querySelector(".song-list").innerHTML += 
-            `
-            <div class="d-flex justify-content-between align-items-center text-light" style="
-                    margin-top: 1.5rem;
-                ">
+        if (i >= 9) {
+            document.querySelector(".song-list").innerHTML +=
+                `
+            <div class="d-flex justify-content-between align-items-center text-light button-hover" style="
+                    margin-top: 1.5rem;">
+                
                             <div class="d-flex align-items-center ps-1">
                                 <div class="text-grey count-mobile" style="
-                            font-size: 20px;
-                        ">
+                                     font-size: 20px;">
                                     <p class="m-0">${i + 1}</p>
                                 </div>
-                                <div style="
-                            font-size: 15px;
-                            margin-left: 1.5rem;
-                        ">
-                                    <p class="m-0 fw-bolder">${song.title_short}</p>
-                                    <p class="m-0 text-grey">${song.artist.name}</p>
+                                <div style="font-size: 15px;margin-left: 1.5rem;">
+                                    
+                                    <p class="m-0 fw-bolder" style="cursor: pointer;">
+                                        <a class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+                                            ${song.title_short}
+                                        </a>
+                                    </p>
+                                    
+                                    <a class="link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
+                                        <p class="m-0 text-grey">${song.artist.name}</p>
+                                    </a>
+                                    
                                 </div>
                             </div>
+                            
                             <div class="me-4 pe-3">
                                 <p class="m-0 text-grey">${formatTime(song.duration)}</p>
                             </div>
@@ -175,9 +181,9 @@ const main = document.querySelector("#main")
 
             `
         } else {
-            document.querySelector(".song-list").innerHTML += 
-            `
-            <div class="d-flex justify-content-between align-items-center text-light" style="
+            document.querySelector(".song-list").innerHTML +=
+                `
+            <div class="d-flex justify-content-between align-items-center text-light button-hover" style="
                     margin-top: 1.5rem;
                 ">
                             <div class="d-flex align-items-center ps-3 ">
@@ -190,8 +196,14 @@ const main = document.querySelector("#main")
                             font-size: 15px;
                             margin-left: 1.5rem;
                         ">
-                                    <p class="m-0 fw-bolder">${song.title_short}</p>
+                                 <p class="m-0 fw-bolder" style="cursor: pointer;">
+                                         <a class=" text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover">
+                                              ${song.title_short}
+                                         </a>
+                                 </p>
+                                 <a class="link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
                                     <p class="m-0 text-grey">${song.artist.name}</p>
+                                </a>
                                 </div>
                             </div>
                             <div class="me-4 pe-3">
@@ -201,10 +213,10 @@ const main = document.querySelector("#main")
             `
         }
     });
-  
- }
 
- 
+}
+
+
 
 
 
@@ -218,8 +230,8 @@ function formatTime(time) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
- function toggleIcon() {
-   
+function toggleIcon() {
+
     const tabelsong = document.querySelector('.table-song');
     const icon = document.querySelector('.button-top-main');
     console.log(tabelsong.getBoundingClientRect().top)
