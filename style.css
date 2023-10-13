@@ -2,6 +2,11 @@ body {
     background-color: black;
 }
 
+*{
+  transition: all 0.3s ease;
+}
+ 
+
 /* MAIN */
 
 main {

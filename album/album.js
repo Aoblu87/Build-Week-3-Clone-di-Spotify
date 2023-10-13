@@ -99,7 +99,7 @@ const main = document.querySelector("#main")
                             <img src="${AlbumData.contributors[0].picture}"
                                 alt="" style="width: 25px; height: 25px; border-radius: 25px;">
                             <p class="m-0" style="font-size: 14px;"><span class="fw-bolder">
-                            <a class="text-decoration-none text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
+                            <a class="link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover text-light" href="/artist/artist.html?id=${AlbumData.artist.id}">
                             ${AlbumData.artist.name}</a></span> • ${AlbumData.nb_tracks} canzoni • ${formatTime(AlbumData.duration)} minuti</p>
                                 
                         </div>
