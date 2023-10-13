@@ -22,6 +22,7 @@ window.onload = async function () {
     makeFetch("hisaishi", sectionTwo)
     makeFetch("japanese", sectionThree)
     favorites("wagakkiband", sectionOne)
+
     
     
 }
@@ -159,3 +160,5 @@ console.log (hours)
 
 
 //   <p class="card-text">${timeStampFromDuration(result.duration)}</p>
+
+

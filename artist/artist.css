@@ -20,22 +20,13 @@
   opacity: 1;
 }
 
+/*PLAYER*/
 #player i {
   color: white;
   cursor: pointer;
   opacity: 0.7;
 }
 
-.buttons {
-  margin-top: 40px;
-  margin-left: 40px;
-  height: 60px;
-}
-
-.buttons i:hover {
-  transform: scale(105%);
-  opacity: 1;
-}
 
 #player i:hover {
    opacity: 1;
@@ -101,6 +92,19 @@
   }
 }
 
+
+.buttons {
+  margin-top: 40px;
+  margin-left: 40px;
+  height: 60px;
+}
+
+.buttons i:hover {
+  transform: scale(105%);
+  opacity: 1;
+}
+
+/*IMMAGINE ARTISTA*/
 .contenitore-foto {
   width: 100%;
   height: 300px;
