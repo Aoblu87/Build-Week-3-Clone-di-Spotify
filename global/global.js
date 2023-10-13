@@ -11,7 +11,7 @@ const sleep = (milliseconds=500) => new Promise(resolve => setTimeout(resolve, m
 
 async function GetSongFromRandomArtist() {  // funzione che fetcha randomicamente un artista 
     try {
-        document.querySelector(".dot-pulse").classList.remove("d-none")
+        
         do {                                //ciclo do while che cicla fino a quando non trova un array pieno
             await sleep(1800)               //funzione che fa fetchare ogni 1.5sec per non intasare il server
             randomnumber()                  // funzione per avere un numero random 

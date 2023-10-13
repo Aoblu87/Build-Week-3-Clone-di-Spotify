@@ -29,7 +29,9 @@ window.addEventListener('load', ()=>{
 }
 
 async function favorites(artist, nodeHtml){
+
     try {
+        document.querySelector(".dot-pulse").classList.remove("d-none")
         allFavorites = await getResults(artist)
 
         // Varibili per identificare nodi

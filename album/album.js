@@ -7,6 +7,7 @@ const main = document.querySelector("#main")
 
 
  async function GetAlbum() { 
+    document.querySelector(".dot-pulse").classList.remove("d-none")
          const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
          const result = await response.json()
          console.log(result)
@@ -20,7 +21,6 @@ const main = document.querySelector("#main")
     
         
         const AlbumData = await GetAlbum() // X SIDEBAR
-        
         DisplayAlbum(AlbumData)
         DisplayTableSong(AlbumData)
         document.querySelector(".scroollbar-main").addEventListener('scroll', toggleIcon);
