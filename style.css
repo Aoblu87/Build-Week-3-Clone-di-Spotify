@@ -255,4 +255,12 @@ main {
     #greetings {
         flex-direction: column;
     }
+
+    .row>* {
+        width: auto;
+    }
+
+    #made-for-you-section {
+        flex-direction: column;
+    }
    }

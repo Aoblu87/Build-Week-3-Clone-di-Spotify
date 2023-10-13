@@ -95,7 +95,7 @@ function displayFavorites(result, nodeHtml){
         const song = songs[i]
 console.log(song)
         nodeHtml.innerHTML += /*html*/`
-                        <div id="${song.artist.id}" class="greetings-card col-md-3 my-1 border-0 rounded" >
+                        <div id="${song.artist.id}" class="greetings-card my-1 border-0 rounded" >
                             <div class="row ">
                                 <div class="col-md-2 d-flex p-0">
                                     <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
