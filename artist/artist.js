@@ -11,6 +11,7 @@ const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
 async function loadData(id) {
     try {
+      document.querySelector(".dot-pulse").classList.remove("d-none")
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
       const data = await response.json()
       console.log(data)
