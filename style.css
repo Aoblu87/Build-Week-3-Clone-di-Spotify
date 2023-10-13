@@ -264,9 +264,9 @@ main {
         flex-direction: column;
     }
 
-    #greetings {
+    /* #greetings {
         flex-direction: column;
-    }
+    } */
 
     /* .row>* {
         width: auto;
@@ -286,9 +286,9 @@ main {
         /* height: 100%; */
     }
 
-    #recently-played-section {
+    /* #recently-played-section {
         flex-direction: column;
-    }
+    } */
 
     #user-icon {
         justify-content: start;
