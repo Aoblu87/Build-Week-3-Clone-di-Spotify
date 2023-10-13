@@ -25,54 +25,55 @@
                 <div class="sidebar-top pt-2 mx-2">
                     <div class="nav flex-column">
                         <div class="bg-grey px-3" style="border-radius: 15px;">
+                            <a href=""><img src="../assets/Spotify-logo.png" alt="" height="45"></a>
                             <div class="text-decoration-none py-2"><a
                                     class="text-grey text-decoration-none d-flex align-items-center"
-                                    href="../index.html"><i class="bi bi-house-door fs-5 text me-2"></i> <span
+                                    href="../index.html"><i class="bi bi-house-door fs-4 text me-4"></i> <span
                                         class="fw-bolder">Home</span></a>
                             </div>
                             <div class="text-decoration-none py-2"><a
                                     class="text-grey text-decoration-none d-flex align-items-center"
-                                    href="../search/search.html"><i class="bi bi-search fs-5 text me-2"></i> <span
+                                    href="../search/search.html"><i class="bi bi-search fs-4 text me-4"></i> <span
                                         class="fw-bolder">Cerca</span></a>
                             </div>
 
                         </div>
-                        <div class="bg-grey px-3" style="border-top: 5px solid black;
+                        <div class="bg-grey px-3 py-4" style="
                         border-radius: 15px 15px 0 0;">
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <div class="text-decoration-none py-2"><a
                                         class="text-grey text-decoration-none d-flex align-items-center" href="#"><i
-                                            class="bi bi-upc fs-5 text me-2"></i> <span class="fw-bolder">La tua
+                                            class="bi bi-upc fs-4 text me-4"></i> <span class="fw-bolder">La tua
                                             Libreria</span></a>
                                 </div>
 
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <i class="bi bi-plus-lg text-light fs-5"></i>
-                                    <i class="bi bi-arrow-right-short text-light fs-4"></i>
+                                    <i class="bi bi-plus-lg text-light fs-5 me-2"></i>
+                                    <i class="bi bi-arrow-right-short text-light fs-4" style="margin-top: 1px;"></i>
                                 </div>
 
                             </div>
-                            <div class="d-flex flex-wrap mt-3 pb-2 justify-content-left" style="font-size: 0.8rem;">
+                            <div class="d-flex flex-wrap mt-3 justify-content-left" style="font-size: 0.8rem;">
                                 <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
-                                    <a href="#_" class="text-decoration-none fw-medium text-light ">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light px-2">
                                         Playlist
                                     </a>
                                 </div>
                                 <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
-                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light px-2">
 
                                         Podcast e show
                                     </a>
                                 </div>
                                 <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
-                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light px-2">
 
                                         Album
                                     </a>
                                 </div>
                                 <div class="sidebar-button d-flex justify-content-center align-items-center mt-2 me-2">
-                                    <a href="#_" class="text-decoration-none fw-medium text-light">
+                                    <a href="#_" class="text-decoration-none fw-medium text-light px-2">
 
                                         Artisti
                                     </a>
@@ -83,11 +84,11 @@
                 </div>
                 <div class="sidebar-scroll mx-2 bg-grey">
                     <div class="nav flex-column p-3 ">
-                        <div class="waveform d-none">
-                            <div class="waveform__bar"></div>
-                            <div class="waveform__bar"></div>
-                            <div class="waveform__bar"></div>
-                            <div class="waveform__bar"></div>
+                        <div>
+                            <h6 class="mb-4 fw-bold text-light">Artista del Giorno</h6>
+                            <div class="dot-pulse d-flex">
+                                <div class="dot-pulse__dot"></div>
+                            </div>
                         </div>
                         <div class="ArtistInfo text-grey">
 
@@ -107,102 +108,20 @@
                 <div class="container">
                     <h3 class="my-5 fw-bold">Cerca</h3>
                     <div class="rounded-pill py-3 px-4 bg-dark d-flex">
-                        <span class="text-white me-3" onclick="displayResults(SearchBar.value)"><i
+                        <span class="text-white me-3"><i
                                 class="bi bi-search"></i></span>
                         <input class="border-0 bg-transparent text-white w-100" type="text" id="SearchBar"
-                            placeholder="Cosa vuoi ascoltare?">
+                            placeholder="Cosa vuoi ascoltare?" oninput="debounce(() => {displayResults(SearchBar.value)}, 500)">
                     </div>
                 </div>
                 <!-- DISPLAY TAB -->
-                <div class="container main mt-5">
+                <div class="container main mt-5" id="sfoglia">
                     <h3 class="text-center text-md-start fw-bold fs-5">Sfoglia tutto</h3>
-                    <div class="row g-4 my-4">
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(39,133,106);">
-                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(180,155,200);">
-                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(39,133,106);">
-                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(39,133,106);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(30,50,100);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(141,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(115,88,255);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(180,155,200);">
-                                <h3 class="text-white fw-bold pt-3 ps-2">Podcast</h3>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(240,55,165);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(156,240,225);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(215,242,125);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(143,103,171);"></div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2">
-                            <div class="square w-100 rounded" style="background: rgb(232,17,91);"></div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- FOOTER -->
                 <footer class="container pt-5">
-                    <hr> <!-- SEPARATORE -->
+                    <hr>
                     <div class="row justify-content-between">
                         <!-- PRIMA COLONNA: LINKS -->
                         <div class="col-12 col-md-6 d-flex ">
@@ -264,20 +183,22 @@
                         <!-- SECONDA COLONNA: SOCIALS -->
                         <div class="col-12 col-md-6 d-flex justify-content-start justify-content-md-end">
                             <div id="social-icons" class="mb-3 d-flex align-items-start">
-                                <button type="button"
-                                    class="btn btn-outline-dark border-0 rounded-circle fs-5 text-white"><i
-                                        class="bi bi-instagram "></i></button>
-                                <button type="button" class="btn btn-outline-dark border-0 rounded-circle fs-5"><i
-                                        class="bi bi-facebook"></i></button>
-                                <button type="button" class="btn btn-outline-dark border-0 rounded-circle fs-5"><i
-                                        class="bi bi-twitter"></i></button>
+                                <button class="btn btn-outline-dark border-0 rounded-circle text-white">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0 rounded-circle text-white">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0 rounded-circle text-white">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </button>
 
                             </div>
                         </div>
                     </div>
-                    <hr> <!-- SEPARATORE -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <!-- FOOTER LEGAL LINKS -->
+                    <hr>
+                    <!-- FOOTER LEGAL LINKS -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4">
                         <ul id="footer-list"
                             class="list-group list-group-horizontal list-unstyled d-flex flex-wrap row-gap-2 column-gap-4">
                             <li><a href="#"
@@ -302,35 +223,42 @@
 
                         </ul>
                         <!-- COPYRIGHTS -->
-                        <p id="copyrights" class="text-white-50 mt-4">© 2023 Spotify AB</p>
+                        <p id="copyrights" class="text-white-50 mt-4 mt-md-0">© 2023 Spotify AB</p>
                     </div>
                 </footer>
             </div>
         </div>
     </div>
 
+    <!-- PLAYER -->
     <div class="container-fluid mt-auto" style="position: sticky; bottom: 0; z-index: 100" id="player">
+        <div class="player-progress-bar"></div>
         <div class="row p-3 bg-dark d-flex align-items-center">
             <div class="col-8 col-md-4 px-0">
                 <div class="d-flex align-items-center">
-                    <img src="EPICODE LOGO.png" alt="" class="img-fluid rounded shadow me-3" style="width: 4rem">
+                    <img src="../assets/Spotify-Icon.png" alt="" class="img-fluid rounded shadow me-3" style="width: 4rem">
                     <div class="TextCut">
                         <h5 class="mb-0 fs-6 fw-semibold TextCut">M4 Build Week</h5>
-                        <p class="mb-0 text-white-50 TextCut">EPICODE</p>
+                        <p class="mb-0 text-white-50 fw-semibold TextCut">EPICODE</p>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="d-flex align-items-center justify-content-end justify-content-md-center">
-                    <i class="bi bi-play-circle-fill mx-3 fs-1"></i>
+            <div class="col-4 d-flex align-items-center justify-content-end justify-content-md-center">
+                <i class="bi bi-shuffle me-5 d-none d-md-inline"></i>
+                <i class="bi bi-skip-start-fill fs-4 d-none d-md-inline"></i>
+                <div class="player-play d-flex justify-content-center align-items-center mx-md-4" id="Player-Button"
+                    onclick="stopAll()">
+                    <i class="bi bi-play-fill fs-4 text-white "></i>
                 </div>
+                <i class="bi bi-skip-end-fill fs-4 d-none d-md-inline"></i>
+                <i class="bi bi-repeat ms-5 d-none d-md-inline"></i>
             </div>
             <div class="col-4 text-end d-none d-md-block">
-                <i class="bi bi-file-play mx-2 fs-5"></i>
-                <i class="bi bi-mic mx-2 fs-5"></i>
-                <i class="bi bi-border-width mx-2 fs-5"></i>
-                <i class="bi bi-pc-display mx-2 fs-5"></i>
-                <i class="bi bi-volume-down mx-2 fs-5"></i>
+                <i class="bi bi-file-play mx-2 d-none d-md-inline"></i>
+                <i class="bi bi-mic mx-2 d-none d-md-inline"></i>
+                <i class="bi bi-music-note-list mx-2 d-none d-md-inline"></i>
+                <i class="bi bi-speaker mx-2 d-none d-md-inline"></i>
+                <i class="bi bi-volume-up-fill mx-2 d-none d-md-inline"></i>
             </div>
         </div>
     </div>

@@ -16,6 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .bg-dark{
@@ -60,14 +61,23 @@ input[type="text"]::placeholder, input[type="text"]{
     box-shadow: none;
     border-radius: 50%;
 }
-.play-button:hover{
+#cover:hover .play-button{
     box-shadow: 0 0px 16px rgba(0, 0, 0, 0.75);
+}
+
+.player-play{
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-green);
+    transition: all .3s ease;
+    box-shadow: none;
+    border-radius: 50%;
 }
 
 .TextCut{
     white-space: nowrap;      
     overflow: hidden;
-    text-overflow: ellipsis;   
+    text-overflow: ellipsis;  
 }
 
 .main .row{
@@ -83,6 +93,7 @@ input[type="text"]::placeholder, input[type="text"]{
     opacity: 1;
     transform: translateY(0);
     animation: linear 2s infinite running rotate;
+    color: var(--color-green);
 }
 
 @keyframes rotate{
@@ -95,7 +106,47 @@ input[type="text"]::placeholder, input[type="text"]{
 }
 
 .square {
-    height: 100px;
+    aspect-ratio: 1/1;
     background-position: center;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.square:hover{
+    opacity: 0.75;
+}
+
+.square img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    height: 50%;
+    aspect-ratio: 1/1;
+    transform: rotate(25deg) translate(18%,-2%);
+}
+
+footer *{
+    font-size: 12px;
+}
+
+.player-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%; 
+    height: 2px; 
+    background-color: var(--color-green); 
+}
+
+.player-progress-bar::after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-green);
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
 }
