@@ -171,6 +171,10 @@ font-weight: 700;
   margin-left: 10px !important;
 }
 
+.conteiner-fluid.mx-3 {
+  height: 50px !important;
+}
+
 }
 
 .contenitore-foto {
@@ -241,7 +245,13 @@ color: white;
 margin-bottom: 100px;
 }
 
-
+.fixed-bottom {
+  position: fixed;
+    right: 0;
+    bottom: 50px !important;
+    left: 0;
+    z-index: 1030;
+}
 
 
 /*MAIN*/
