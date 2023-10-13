@@ -272,18 +272,18 @@ main {
         width: auto;
     } */
 
-    #made-for-you-section {
+    /* #made-for-you-section {
         flex-direction: column;
-    }
+    } */
 
-    .row {
+    /* .row {
         flex-wrap: nowrap;
-    }
+    } */
 
     .results-container>div {
         /* width: 30%; */
         margin-bottom: 10px;
-        height: 100%;
+        /* height: 100%; */
     }
 
     #recently-played-section {
