@@ -17,9 +17,9 @@ function timeStampFromDuration(duration) {
     )}`
 }
 window.addEventListener('load', ()=>{
-    makeFetch("hisaishi", sectionTwo)
+    makeFetch("louwyss", sectionTwo)
     makeFetch("japanese", sectionThree)
-    favorites("wagakkiband", sectionOne)
+    favorites("rock", sectionOne)
 })
 
  window.onload = async function () {
@@ -133,7 +133,7 @@ function displayResults(result, nodeHtml) {
         const song = songs[i]
 
         nodeHtml.innerHTML += /*html*/`
-    <div id="${song.artist.id}" class="col-6 col-md-2">
+    <div id="${song.artist.id}" class="col-6 col-md-2 my-2">
     <div id="card" class="card-results position-relative rounded p-3">
         <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="../artist/artist.html?id=${song.artist.id}">
             <img src="${song.album.cover_xl}" class="card-img-top rounded-circle" alt="${song.title}">

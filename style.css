@@ -58,7 +58,7 @@ main {
 
 #greetings >div{
     height: 5.5rem;
-    width: 31.5rem;
+    /* width: 31.5rem; */
     background-color: rgba(42, 43, 43, 0.4);
 }
 #greetings >div > .row{
