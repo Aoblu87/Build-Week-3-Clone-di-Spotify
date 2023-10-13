@@ -131,9 +131,7 @@ main {
 
 
 /* PLAYER */
-.fixed-bottom{
-  bottom: 25px !important;
-}
+
 #player i {
     color: white;
     cursor: pointer;
@@ -208,6 +206,10 @@ main {
   
       #progress2 {
         display: none;
+      }
+
+      .fixed-bottom{
+        bottom: 20px !important;
       }
   }
   
@@ -297,3 +299,6 @@ main {
         justify-content: start;
     }
    }
+
+
+  
